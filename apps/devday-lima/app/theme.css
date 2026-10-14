@@ -1,0 +1,11 @@
+/* DevDay Exchange palette, from the official Luma cover */
+:root {
+  --canvas: #fbfbfa; --surface: #f0f0ee; --ink: #111111; --muted: #5b5b58; --line: #dcdcd8;
+  --accent-text: #0066ff; --yellow: #0066ff; --soft: #cfe0ff;
+  --green: #d6f2df; --green-ink: #00692a; --blue: #dce8ff; --blue-ink: #0047b3;
+  --lilac: #ece2fe; --lilac-ink: #5b2bb5; --sand: #ffe6d1; --sand-ink: #9a4300;
+}
+.slide.dark { --canvas: #111111; --surface: #1d1d1d; --ink: #f6f6f4; --muted: #a8a8a3; --line: #333; --accent-text: #6ea6ff; }
+.dark .mark > b { background: #0047b3; }
+.face { position: absolute; border-radius: 50%; display: grid; place-items: center; font: 500 1em/1 var(--display); color: #111; pointer-events: none; z-index: 0; }
+.dark .face.k { background: #f6f6f4 !important; color: #111; }
