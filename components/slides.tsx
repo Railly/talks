@@ -105,7 +105,7 @@ export const slides: Slide[] = [
               <span>Bachiller en Ingeniería de Software</span>
             </R>
             <R i={3} className="cred">
-              <span className="cred-logo">{/* biome-ignore lint/performance/noImgElement: static logo */}<img src="/img/unir.svg" alt="UNIR" style={{ height: 52 }} /></span>
+              <span className="cred-logo">{/* biome-ignore lint/performance/noImgElement: static logo */}<img src="/img/unir.svg" alt="UNIR" style={{ height: 60 }} /></span>
               <span>Magíster en Inteligencia Artificial</span>
             </R>
             <R i={4} className="cred">
