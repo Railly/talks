@@ -109,10 +109,7 @@ export const slides: Slide[] = [
               <span>Magíster en Inteligencia Artificial</span>
             </R>
             <R i={4} className="cred">
-              <span className="cred-logo vercel">
-                <svg viewBox="0 0 256 222" height="40" aria-hidden="true"><path fill="currentColor" d="m128 0 128 221.705H0z" /></svg>
-                Vercel
-              </span>
+              <span className="cred-logo">{/* biome-ignore lint/performance/noImgElement: static logo */}<img src="/img/vercel.svg" alt="Vercel" style={{ height: 44 }} /></span>
               <span>Member of Technical Staff, Software Engineer</span>
             </R>
           </div>
