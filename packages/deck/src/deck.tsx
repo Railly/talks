@@ -3,9 +3,9 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useEffect, useState } from "react";
 import { EASE } from "./motion";
-import { slides } from "./order";
+import type { Slide } from "./ui";
 
-export function Deck() {
+export function Deck({ slides }: { slides: Slide[] }) {
   const [[index, dir], setState] = useState<[number, number]>([0, 1]);
   const [notes, setNotes] = useState(false);
   const [scale, setScale] = useState(1);

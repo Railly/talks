@@ -1,73 +1,9 @@
 "use client";
 
 import { motion } from "motion/react";
-import type { ReactNode } from "react";
-import { Boat, Coffee, Conversation, Cube, Diploma, Hub, Megaphone, Notebook, Orbit, Spark, Stack } from "./art";
-import { Logo } from "./logo";
-import { EASE, Line, R, Words } from "./motion";
 
-export type Slide = { id: string; dark?: boolean; notes: string; render: (n: string) => ReactNode };
+import { Boat, Card, Coffee, Contours, Conversation, Cube, Diploma, EASE, Eyebrow, Foot, Hub, Line, Logo, Mark, Megaphone, Notebook, Orbit, R, Spark, Stack, type Slide, tone, Words } from "@talks/deck";
 
-export function Eyebrow({ children }: { children: ReactNode }) {
-  return (
-    <R className="eyebrow">
-      <i />
-      {children}
-    </R>
-  );
-}
-
-export function Foot({ left, right }: { left: ReactNode; right?: ReactNode }) {
-  return (
-    <R className="foot" i={6}>
-      <span>{left}</span>
-      <span>{right}</span>
-    </R>
-  );
-}
-
-export function Mark({ children, delay = 0.7 }: { children: ReactNode; delay?: number }) {
-  return (
-    <span className="mark">
-      <span>{children}</span>
-      <Line delay={delay} />
-    </span>
-  );
-}
-
-export function Card({ i, tone, num, title, text, art }: { i: number; tone?: string; num?: string; title: string; text: string; art?: ReactNode }) {
-  return (
-    <R i={i} className={`card ${tone ?? ""}`}>
-      {art}
-      {num && <span className="num">{num}</span>}
-      <h3>{title}</h3>
-      <p>{text}</p>
-    </R>
-  );
-}
-
-function Contours() {
-  return (
-    <svg className="art" viewBox="0 0 1600 900" style={{ inset: 0, width: "100%", height: "100%" }} fill="none" aria-hidden="true">
-      {Array.from({ length: 9 }).map((_, k) => (
-        <motion.ellipse
-          key={k}
-          cx="800"
-          cy="250"
-          rx={260 + k * 120}
-          ry={110 + k * 70}
-          stroke="#f8e9a4"
-          strokeOpacity={0.12 - k * 0.01}
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 2.4, ease: EASE, delay: 0.1 + k * 0.08 }}
-        />
-      ))}
-    </svg>
-  );
-}
-
-export const tone = { green: "c-green", blue: "c-blue", lilac: "c-lilac", sand: "c-sand" };
 
 export const base: Slide[] = [
   {
@@ -145,15 +81,15 @@ export const base: Slide[] = [
           <R as="h2" i={1}>Mg. Railly Angelo Hugo Quispe</R>
           <div className="creds">
             <R i={2} className="cred">
-              <span className="cred-logo">{/* biome-ignore lint/performance/noImgElement: static logo */}<img src="/img/unmsm.png" alt="UNMSM" style={{ height: 76 }} /></span>
+              <span className="cred-logo">{/* biome-ignore lint/performance/noImgElement: static logo */}<img src="/shared/unmsm.png" alt="UNMSM" style={{ height: 76 }} /></span>
               <span>Bachiller en Ingeniería de Software</span>
             </R>
             <R i={3} className="cred">
-              <span className="cred-logo">{/* biome-ignore lint/performance/noImgElement: static logo */}<img src="/img/unir.svg" alt="UNIR" style={{ height: 60 }} /></span>
+              <span className="cred-logo">{/* biome-ignore lint/performance/noImgElement: static logo */}<img src="/shared/unir.svg" alt="UNIR" style={{ height: 60 }} /></span>
               <span>Magíster en Inteligencia Artificial</span>
             </R>
             <R i={4} className="cred">
-              <span className="cred-logo">{/* biome-ignore lint/performance/noImgElement: static logo */}<img src="/img/vercel.svg" alt="Vercel" style={{ height: 44 }} /></span>
+              <span className="cred-logo">{/* biome-ignore lint/performance/noImgElement: static logo */}<img src="/shared/vercel.svg" alt="Vercel" style={{ height: 44 }} /></span>
               <span>Member of Technical Staff, Software Engineer</span>
             </R>
           </div>
@@ -176,7 +112,7 @@ export const base: Slide[] = [
         >
           <div className="blob" />
           {/* biome-ignore lint/performance/noImgElement: static cutout */}
-          <img src="/img/railly.webp" alt="Railly Hugo" />
+          <img src="/shared/railly.webp" alt="Railly Hugo" />
         </motion.div>
         <Eyebrow>La versión de verdad</Eyebrow>
         <div className="body" style={{ gap: 28 }}>

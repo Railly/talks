@@ -1,5 +1,6 @@
-import { Deck } from "@/components/deck";
+import { Deck } from "@talks/deck";
+import { slides } from "@/components/order";
 
 export default function Page() {
-  return <Deck />;
+  return <Deck slides={slides} />;
 }

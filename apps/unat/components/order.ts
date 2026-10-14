@@ -1,5 +1,7 @@
+"use client";
 import { extra, ORDER } from "./extra";
-import { base, type Slide } from "./slides";
+import type { Slide } from "@talks/deck";
+import { base } from "./slides";
 
 const byId = new Map<string, Slide>([...base, ...extra].map((s) => [s.id, s]));
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@talks/deck/styles.css";
 
 export const metadata: Metadata = {
   title: "La nueva generación de ingenieros",

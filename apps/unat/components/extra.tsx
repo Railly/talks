@@ -1,39 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Hub, Megaphone, Notebook, Orbit, Spark, Stack } from "./art";
-import { EASE, R, Words } from "./motion";
-import { Card, Eyebrow, Foot, Mark, type Slide, tone } from "./slides";
-
-export function PhotoSlot({ label, style }: { label: string; style?: React.CSSProperties }) {
-  return (
-    <motion.div
-      className="photo-slot"
-      style={style}
-      initial={{ opacity: 0, y: 24, rotate: -2 }}
-      animate={{ opacity: 1, y: 0, rotate: -1.5 }}
-      transition={{ duration: 0.8, ease: EASE, delay: 0.5 }}
-    >
-      <span>{label}</span>
-    </motion.div>
-  );
-}
-
-function Shot({ src, alt, caption, style, rotate = -1.2, delay = 0.45 }: { src: string; alt: string; caption?: string; style?: React.CSSProperties; rotate?: number; delay?: number }) {
-  return (
-    <motion.div
-      className="shot"
-      style={style}
-      initial={{ opacity: 0, y: 30, rotate: 0 }}
-      animate={{ opacity: 1, y: 0, rotate }}
-      transition={{ duration: 0.9, ease: EASE, delay }}
-    >
-      {/* biome-ignore lint/performance/noImgElement: static screenshot */}
-      <img src={src} alt={alt} />
-      {caption && <span className="caption">{caption}</span>}
-    </motion.div>
-  );
-}
+import { Card, EASE, Eyebrow, Foot, Hub, Mark, Megaphone, Notebook, Orbit, PhotoSlot, R, Shot, type Slide, Spark, Stack, tone, Words } from "@talks/deck";
 
 const reports = [
   ["#041", "Bomba P-3", "Vibración alta. Se cambió el rodamiento."],

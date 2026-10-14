@@ -5,7 +5,7 @@ import { Float, P, Pop } from "./motion";
 const ell = (cx: number, cy: number, rx: number, ry: number) =>
   `M${cx - rx} ${cy}a${rx} ${ry} 0 1 0 ${rx * 2} 0a${rx} ${ry} 0 1 0 ${-rx * 2} 0Z`;
 
-type ArtProps = { size?: number; className?: string; style?: React.CSSProperties };
+type ArtProps = { size?: number; className?: string; style?: import("react").CSSProperties };
 
 export function Orbit({ size = 280, className, style }: ArtProps) {
   return (

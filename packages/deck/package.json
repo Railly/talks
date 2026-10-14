@@ -1,0 +1,19 @@
+{
+  "name": "@talks/deck",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles.css": "./src/styles.css"
+  },
+  "peerDependencies": {
+    "motion": "*",
+    "react": "*"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "motion": "^12.23.0",
+    "react": "^19.2.0"
+  }
+}
