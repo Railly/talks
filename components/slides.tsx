@@ -77,7 +77,7 @@ export const slides: Slide[] = [
     render: (n) => (
       <>
         <Contours />
-        <Eyebrow>Semana de Ingeniería Industrial · 14 de octubre de 2026</Eyebrow>
+        <Eyebrow>Semana Industrial · 14 al 16 de octubre de 2026</Eyebrow>
         <div className="body">
           <h1>
             <Words text="La nueva generación de ingenieros." />
@@ -86,8 +86,52 @@ export const slides: Slide[] = [
             Pensar, construir e investigar <span className="hl">con IA</span>.
           </R>
         </div>
-        <Foot left="Railly Hugo" right="railly.dev" />
+        <Foot
+          left="Railly Hugo · Sala #1 (virtual) · 09:45"
+          right={
+            <span className="host-logos">
+              {/* biome-ignore lint/performance/noImgElement: static logo */}
+              <img src="/img/unat.png" alt="UNAT" />
+              {/* biome-ignore lint/performance/noImgElement: static logo */}
+              <img src="/img/epii.png" alt="Escuela Profesional de Ingeniería Industrial" />
+            </span>
+          }
+        />
         <Orbit size={520} className="art" style={{ right: 60, top: 300, color: "#f8e9a4" }} />
+      </>
+    ),
+  },
+  {
+    id: "gracias",
+    dark: true,
+    notes: "Agradecer primero, antes de presentarme. A Herminio y a Ronald Paucar por hacer posible esta conversación, y a la Escuela de Ingeniería Industrial de la UNAT por la invitación a su Semana Industrial.",
+    render: (n) => (
+      <>
+        <motion.div
+          className="photo"
+          initial={{ opacity: 0, scale: 1.04, clipPath: "inset(0 0 0 100%)" }}
+          animate={{ opacity: 1, scale: 1, clipPath: "inset(0 0 0 0%)" }}
+          transition={{ duration: 1.1, ease: EASE, delay: 0.2 }}
+        >
+          {/* biome-ignore lint/performance/noImgElement: static photo */}
+          <img src="/img/semana.webp" alt="Estudiantes de Ingeniería Industrial de la UNAT" />
+        </motion.div>
+        <Eyebrow>Antes de empezar</Eyebrow>
+        <div className="body" style={{ maxWidth: 820 }}>
+          <h2>
+            <Words text="Gracias, Herminio y Ronald Paucar." />
+          </h2>
+          <R i={5} as="p" className="lead">
+            Por hacer posible esta conversación. Y a la Escuela Profesional de Ingeniería Industrial de la <strong>UNAT «Daniel Hernández Morillo»</strong> por la invitación.
+          </R>
+          <R i={6} className="host-logos big">
+            {/* biome-ignore lint/performance/noImgElement: static logo */}
+            <img src="/img/unat.png" alt="UNAT" />
+            {/* biome-ignore lint/performance/noImgElement: static logo */}
+            <img src="/img/epii.png" alt="Escuela Profesional de Ingeniería Industrial" />
+          </R>
+        </div>
+        <Foot left="Semana Industrial 2026" />
       </>
     ),
   },

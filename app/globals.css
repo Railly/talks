@@ -18,7 +18,7 @@ html, body { margin: 0; height: 100%; overflow: hidden; background: #e6e7de; fon
 
 .slide { position: absolute; inset: 0; padding: 72px 96px 56px; display: flex; flex-direction: column; background: var(--canvas); color: var(--ink); }
 .slide.dark { --canvas: #191b17; --surface: #22251f; --ink: #f3f3e9; --muted: #b3b7a8; --line: #41443a; --accent-text: #f4d56d; }
-.grain { position: absolute; inset: 0; pointer-events: none; opacity: .5; background-image: radial-gradient(#20221d0d 1px, transparent 1px); background-size: 6px 6px; }
+.grain { position: absolute; inset: 0; pointer-events: none; z-index: 2; opacity: .5; background-image: radial-gradient(#20221d0d 1px, transparent 1px); background-size: 6px 6px; }
 .dark .grain { background-image: radial-gradient(#f3f3e90a 1px, transparent 1px); }
 
 .eyebrow { display: flex; align-items: center; gap: 16px; font: 500 22px/1 var(--text); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
@@ -71,3 +71,10 @@ h2 { font-size: 80px; line-height: 1.04; max-width: 1150px; }
 .creds { display: flex; flex-direction: column; gap: 26px; }
 .cred { display: flex; align-items: center; gap: 40px; font-size: 34px; color: var(--muted); }
 .cred-logo { width: 320px; flex: none; display: flex; align-items: center; }
+.host-logos { display: inline-flex; align-items: center; gap: 18px; }
+.host-logos img { height: 64px; width: auto; }
+.host-logos.big { gap: 28px; }
+.host-logos.big img { height: 110px; }
+.photo { position: absolute; right: 0; top: 0; bottom: 0; width: 640px; overflow: hidden; z-index: 0; }
+.photo img { width: 100%; height: 100%; object-fit: cover; object-position: 40% center; }
+.photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #191b17 0%, #191b17cc 12%, #191b1700 50%); }
