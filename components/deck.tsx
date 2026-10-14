@@ -68,7 +68,7 @@ export function Deck() {
               transition={{ duration: 0.55, ease: EASE }}
             >
               <div className="grain" />
-              {slide.render()}
+              {slide.render(String(index + 1).padStart(2, "0"))}
             </motion.section>
           </AnimatePresence>
           <motion.div

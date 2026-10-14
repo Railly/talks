@@ -6,7 +6,7 @@ import { Boat, Coffee, Conversation, Cube, Diploma, Hub, Megaphone, Notebook, Or
 import { Logo } from "./logo";
 import { EASE, Line, R, Words } from "./motion";
 
-export type Slide = { id: string; dark?: boolean; notes: string; render: () => ReactNode };
+export type Slide = { id: string; dark?: boolean; notes: string; render: (n: string) => ReactNode };
 
 function Eyebrow({ children }: { children: ReactNode }) {
   return (
@@ -74,7 +74,7 @@ export const slides: Slide[] = [
     id: "portada",
     dark: true,
     notes: "Saludo. Gracias a Ronald y a la organización. Hoy no es una clase de herramientas: es sobre qué tipo de ingeniero conviene llegar a ser ahora que la IA existe.",
-    render: () => (
+    render: (n) => (
       <>
         <Contours />
         <Eyebrow>Semana de Ingeniería Industrial · 14 de octubre de 2026</Eyebrow>
@@ -94,26 +94,38 @@ export const slides: Slide[] = [
   {
     id: "formal",
     notes: "Leerlo con tono formal, casi solemne. Así me anunció el programa.",
-    render: () => (
+    render: (n) => (
       <>
         <Eyebrow>La versión del programa</Eyebrow>
         <div className="body" style={{ gap: 36 }}>
           <R as="h2" i={1}>Mg. Railly Angelo Hugo Quispe</R>
-          <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-            <R i={2} className="lead">Bachiller en Ingeniería de Software, <strong>UNMSM</strong></R>
-            <R i={3} className="lead">Magíster en Inteligencia Artificial, <strong>UNIR</strong></R>
-            <R i={4} className="lead">Member of Technical Staff, Software Engineer @ <strong>Vercel</strong></R>
+          <div className="creds">
+            <R i={2} className="cred">
+              <span className="cred-logo">{/* biome-ignore lint/performance/noImgElement: static logo */}<img src="/img/unmsm.png" alt="UNMSM" style={{ height: 76 }} /></span>
+              <span>Bachiller en Ingeniería de Software</span>
+            </R>
+            <R i={3} className="cred">
+              <span className="cred-logo">{/* biome-ignore lint/performance/noImgElement: static logo */}<img src="/img/unir.svg" alt="UNIR" style={{ height: 52 }} /></span>
+              <span>Magíster en Inteligencia Artificial</span>
+            </R>
+            <R i={4} className="cred">
+              <span className="cred-logo vercel">
+                <svg viewBox="0 0 256 222" height="40" aria-hidden="true"><path fill="currentColor" d="m128 0 128 221.705H0z" /></svg>
+                Vercel
+              </span>
+              <span>Member of Technical Staff, Software Engineer</span>
+            </R>
           </div>
         </div>
-        <Foot left="Todo cierto" right="02" />
-        <Diploma size={420} className="art" style={{ right: 90, top: 400, color: "var(--sand-ink)" }} />
+        <Foot left="Todo cierto" right={n} />
+        <Diploma size={300} className="art" style={{ right: 96, top: 60, color: "var(--sand-ink)" }} />
       </>
     ),
   },
   {
     id: "builder",
     notes: "Pausa. Todo eso es cierto, pero no es como me presento. Prefiero esto.",
-    render: () => (
+    render: (n) => (
       <>
         <motion.div
           className="portrait"
@@ -158,13 +170,13 @@ export const slides: Slide[] = [
   },
   {
     id: "recorrido",
-    notes: "Generar cercanía: egresé en octubre de 2024. Menos de 5 años de experiencia. Hace muy poco estaba donde están ustedes.",
-    render: () => (
+    notes: "Generar cercanía: egresé en octubre de 2023. Menos de 5 años de experiencia. Hace muy poco estaba donde están ustedes.",
+    render: (n) => (
       <>
         <Eyebrow>Recién empiezo, igual que ustedes</Eyebrow>
         <div className="body">
           <div className="cards" style={{ ["--n" as string]: 4 }}>
-            <Card i={1} tone={tone.green} num="Oct 2024" title="Egresé" text="Ingeniería de Software, UNMSM" art={<Orbit className="icon" />} />
+            <Card i={1} tone={tone.green} num="Oct 2023" title="Egresé" text="Ingeniería de Software, UNMSM" art={<Orbit className="icon" />} />
             <Card i={2} tone={tone.blue} num="Open source" title="midudev" text="Proyectos con el mayor streamer tech en español" art={<Stack className="icon" />} />
             <Card i={3} tone={tone.lilac} num="2025" title="Clerk" text="AI Software Engineer" art={<Cube className="icon" />} />
             <Card i={4} tone={tone.sand} num="2026" title="Vercel" text="Vercel Labs, Buenos Aires" art={<Hub className="icon" />} />
@@ -173,7 +185,7 @@ export const slides: Slide[] = [
             Menos de 5 años de experiencia. <strong>El futuro está más cerca de lo que creen.</strong>
           </R>
         </div>
-        <Foot left="Recorrido" right="04" />
+        <Foot left="Recorrido" right={n} />
       </>
     ),
   },
@@ -181,7 +193,7 @@ export const slides: Slide[] = [
     id: "bulla",
     dark: true,
     notes: "La idea central de esta parte: nadie me buscó por mi CV. Me encontraron por lo que publiqué: repos, tweets, proyectos. Internet hace el resto si te la crees.",
-    render: () => (
+    render: (n) => (
       <>
         <Eyebrow>Lo que cambió todo</Eyebrow>
         <div className="body">
@@ -192,7 +204,7 @@ export const slides: Slide[] = [
             Internet + <span className="hl">creérsela</span> + publicar tu trabajo.
           </R>
         </div>
-        <Foot left="Midudev, Clerk y Vercel llegaron por lo que publiqué" right="05" />
+        <Foot left="Midudev, Clerk y Vercel llegaron por lo que publiqué" right={n} />
         <Megaphone size={440} className="art" style={{ right: 70, top: 250, color: "#f8e9a4", ["--surface" as string]: "#22251f" }} />
       </>
     ),
@@ -201,7 +213,7 @@ export const slides: Slide[] = [
     id: "ship",
     dark: true,
     notes: "Frase de la cultura builder. Hoy un estudiante de Industrial puede construir en una tarde lo que antes pedía un equipo. No es un tutorial: es un cambio de lo que es posible.",
-    render: () => (
+    render: (n) => (
       <>
         <Eyebrow>El cambio</Eyebrow>
         <div className="body">
@@ -214,15 +226,34 @@ export const slides: Slide[] = [
             Lo que antes pedía un equipo y meses, hoy lo arma una persona que sabe qué quiere construir.
           </R>
         </div>
-        <Foot left="Ya es posible" right="06" />
+        <Foot left="Ya es posible" right={n} />
         <Boat size={520} className="art" style={{ right: 40, top: 110 }} />
+      </>
+    ),
+  },
+  {
+    id: "inviable",
+    notes: "Pendiente: afinar con la grabación de Hunter. Idea: como ingeniero, hoy es económicamente inviable no usar agentes, porque aceleran demasiado. Quien no los usa compite en desventaja de tiempo y costo.",
+    render: (n) => (
+      <>
+        <Eyebrow>La realidad económica</Eyebrow>
+        <div className="body">
+          <h2 style={{ maxWidth: 1250 }}>
+            <Words text="Hoy es económicamente inviable" /> <Mark delay={1.1}><Words text="no usar agentes." i={4} /></Mark>
+          </h2>
+          <R i={7} as="p" className="lead">
+            Aceleran demasiado. Un ingeniero que no los usa compite en desventaja de <strong>tiempo y costo</strong>.
+          </R>
+        </div>
+        <Foot left="Como ingenieros, no como usuarios" right={n} />
+        <Cube size={300} className="art" style={{ right: 100, top: 70, color: "var(--muted)" }} />
       </>
     ),
   },
   {
     id: "pensar",
     notes: "Primer eje. La mayoría ve la IA como un asistente que responde preguntas. Un ingeniero la ve como una capacidad que dirige hacia un problema.",
-    render: () => (
+    render: (n) => (
       <>
         <Eyebrow>01 / Pensar</Eyebrow>
         <div className="body">
@@ -232,14 +263,14 @@ export const slides: Slide[] = [
             <Card i={3} tone="c-ink" title="Como ingeniero" text="Defino el problema, le doy contexto, reviso y decido." />
           </div>
         </div>
-        <Foot left="Pensar" right="07" />
+        <Foot left="Pensar" right={n} />
       </>
     ),
   },
   {
     id: "no-delega",
     notes: "No van a ser gurús de la programación, y no hace falta. Lo que no se delega es el criterio. Una respuesta convincente no es una respuesta correcta.",
-    render: () => (
+    render: (n) => (
       <>
         <Eyebrow>01 / Pensar</Eyebrow>
         <div className="body">
@@ -250,14 +281,14 @@ export const slides: Slide[] = [
             <Card i={4} tone={tone.sand} title="La verificación" text="Probar que funciona antes de decir que funciona." art={<Cube className="icon" />} />
           </div>
         </div>
-        <Foot left="No van a ser gurús de la programación. No hace falta." right="08" />
+        <Foot left="No van a ser gurús de la programación. No hace falta." right={n} />
       </>
     ),
   },
   {
     id: "construir",
     notes: "Segundo eje. Caso: reportes de mantenimiento con fallas recurrentes. No es tutorial: es mostrar cómo se dirige un agente. Le das objetivo y contexto, revisas el plan, corriges, validas.",
-    render: () => (
+    render: (n) => (
       <>
         <Eyebrow>02 / Construir dirigiendo un agente</Eyebrow>
         <div className="body">
@@ -269,7 +300,7 @@ export const slides: Slide[] = [
             <Card i={5} tone={tone.sand} num="04" title="Validación" text="Comparas una muestra contra lo que diría una persona." />
           </div>
         </div>
-        <Foot left="Tú diriges, el agente ejecuta" right="09" />
+        <Foot left="Tú diriges, el agente ejecuta" right={n} />
         <Stack size={300} className="art" style={{ right: 80, top: 60, color: "var(--muted)" }} />
       </>
     ),
@@ -278,7 +309,7 @@ export const slides: Slide[] = [
     id: "errores",
     dark: true,
     notes: "Lo más importante del caso: mostrar dónde falla. Inventa, clasifica mal y lo dice con seguridad. Por eso exigir que cite la fuente y revisar una muestra.",
-    render: () => (
+    render: (n) => (
       <>
         <Eyebrow>02 / Construir</Eyebrow>
         <div className="body">
@@ -292,14 +323,14 @@ export const slides: Slide[] = [
             Por eso le pides que <strong>cite la fuente</strong> y revisas una muestra.
           </R>
         </div>
-        <Foot left="El error es parte del método" right="10" />
+        <Foot left="El error es parte del método" right={n} />
       </>
     ),
   },
   {
     id: "investigar",
     notes: "Tercer eje. Un demo llamativo no es evidencia. Para que sea investigación: alternativa, métrica, errores reportados, reproducible.",
-    render: () => (
+    render: (n) => (
       <>
         <Eyebrow>03 / Investigar</Eyebrow>
         <div className="body">
@@ -311,7 +342,7 @@ export const slides: Slide[] = [
             <Card i={5} title="Reproducible" text="Que otra persona pueda repetirlo." />
           </div>
         </div>
-        <Foot left="Un demo no es una contribución" right="11" />
+        <Foot left="Un demo no es una contribución" right={n} />
         <Notebook size={420} className="art" style={{ right: 60, top: 40, color: "var(--lilac-ink)" }} />
       </>
     ),
@@ -320,7 +351,7 @@ export const slides: Slide[] = [
     id: "pregunta",
     dark: true,
     notes: "Ejemplo de pregunta de investigación que sale del caso. Eso ya es una tesis o un proyecto de curso serio.",
-    render: () => (
+    render: (n) => (
       <>
         <Eyebrow>03 / Investigar</Eyebrow>
         <div className="body">
@@ -331,14 +362,14 @@ export const slides: Slide[] = [
             Eso ya es un <span className="hl">proyecto de investigación</span>.
           </R>
         </div>
-        <Foot left="Una buena pregunta vale más que un buen demo" right="12" />
+        <Foot left="Una buena pregunta vale más que un buen demo" right={n} />
       </>
     ),
   },
   {
     id: "temprano",
     notes: "La universidad tiene 8 o 9 años. Está construyendo su ecosistema ahora. Ustedes pueden ser parte desde el primer ciclo: proyectos propios, hackatones, comunidad.",
-    render: () => (
+    render: (n) => (
       <>
         <Eyebrow>04 / Empezar temprano</Eyebrow>
         <div className="body">
@@ -349,7 +380,7 @@ export const slides: Slide[] = [
             <Card i={4} tone={tone.sand} title="Comunidad" text="Rodearte de gente que construye." />
           </div>
         </div>
-        <Foot left="El ecosistema se está armando ahora" right="13" />
+        <Foot left="El ecosistema se está armando ahora" right={n} />
         <Conversation size={340} className="art" style={{ right: 90, top: 70, color: "var(--muted)" }} />
       </>
     ),
@@ -358,7 +389,7 @@ export const slides: Slide[] = [
     id: "crafter",
     dark: true,
     notes: "Qué es Crafter Station: comunidad sin fines de lucro para construir el ecosistema tech del Perú. Más de 1,000 builders, hackatones, meetups. Invitación a unirse.",
-    render: () => (
+    render: (n) => (
       <>
         <Eyebrow>Crafter Station</Eyebrow>
         <div className="body">
@@ -375,7 +406,7 @@ export const slides: Slide[] = [
             <Card i={7} title="Hot Reload" text="Meetups en Lima, Bogotá y Madrid." />
           </div>
         </div>
-        <Foot left="Únete en crafters.chat" right="14" />
+        <Foot left="Únete en crafters.chat" right={n} />
         <Coffee size={300} className="art" style={{ right: 100, top: 60, color: "#f8e9a4", ["--canvas" as string]: "#191b17" }} />
       </>
     ),
@@ -383,7 +414,7 @@ export const slides: Slide[] = [
   {
     id: "cierre",
     notes: "Cierre. Repetir la frase con el matiz del ingeniero. Dejar los dos links en pantalla durante las preguntas.",
-    render: () => (
+    render: (n) => (
       <>
         <Eyebrow>Para llevar</Eyebrow>
         <div className="body">

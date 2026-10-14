@@ -68,3 +68,7 @@ h2 { font-size: 80px; line-height: 1.04; max-width: 1150px; }
 .hud { position: fixed; right: 16px; bottom: 12px; font: 400 13px/1 var(--text); color: #60635a; display: flex; gap: 14px; }
 .notes { position: fixed; left: 0; right: 0; bottom: 0; max-height: 32vh; overflow: auto; background: #191b17; color: #f3f3e9; padding: 18px 28px 22px; font: 400 19px/1.55 var(--text); z-index: 10; border-top: 3px solid var(--yellow); }
 .notes small { display: block; font: 500 12px/1 var(--text); letter-spacing: .08em; text-transform: uppercase; color: #b3b7a8; margin-bottom: 8px; }
+.creds { display: flex; flex-direction: column; gap: 26px; }
+.cred { display: flex; align-items: center; gap: 40px; font-size: 34px; color: var(--muted); }
+.cred-logo { width: 320px; flex: none; display: flex; align-items: center; }
+.cred-logo.vercel { gap: 14px; font: 600 46px/1 var(--text); letter-spacing: -.04em; color: #000; }
