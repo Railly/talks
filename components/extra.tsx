@@ -316,6 +316,29 @@ export const extra: Slide[] = [
       </>
     ),
   },
+  {
+    id: "meta",
+    dark: true,
+    notes: "Una última cosa: esta presentación también la hicieron agentes. Yo no escribí ni una línea a mano. La idea, el mensaje y las historias estaban en mi cabeza; el agente armó las slides, las ilustraciones y animaciones, grabó el video del sistema solar, transcribió mi ensayo para mejorar el contenido y la publicó. En una noche. Y es open source: pueden ver el código.",
+    render: (n) => (
+      <>
+        <Eyebrow>Una última cosa</Eyebrow>
+        <div className="body" style={{ gap: 36 }}>
+          <h2 style={{ maxWidth: 1250 }}>
+            <Words text="Esta presentación también la hicieron" /> <Mark delay={1.2}><Words text="agentes." i={5} /></Mark>
+          </h2>
+          <R i={6} as="p" className="lead">
+            No escribí ni una línea a mano. <strong>La idea estaba en mi cabeza</strong>: el agente armó las slides, animó las ilustraciones, grabó el video, transcribió mi ensayo y la publicó.
+          </R>
+          <R i={8} className="links">
+            <div><small>Véanla de nuevo</small><span>unat.crafter.run</span></div>
+            <div><small>Es open source</small><span>github.com/Railly/unat-talk</span></div>
+          </R>
+        </div>
+        <Foot left="Hecha en una noche · Tú diriges, el agente ejecuta" right={n} />
+      </>
+    ),
+  },
 ];
 
 export const ORDER = [
@@ -325,5 +348,5 @@ export const ORDER = [
   "pensar", "no-delega", "criterio", "verificar",
   "construir", "errores",
   "investigar", "pregunta",
-  "temprano", "cris", "cris-web", "cris-publica", "crafter", "cierre",
+  "temprano", "cris", "cris-web", "cris-publica", "crafter", "meta", "cierre",
 ];
