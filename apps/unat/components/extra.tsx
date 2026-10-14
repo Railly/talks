@@ -300,7 +300,7 @@ export const extra: Slide[] = [
           </R>
           <R i={8} className="links">
             <div><small>Véanla de nuevo</small><span>unat.crafter.run</span></div>
-            <div><small>Es open source</small><span>github.com/Railly/unat-talk</span></div>
+            <div><small>Es open source</small><span>github.com/Railly/talks</span></div>
           </R>
         </div>
         <Foot left="Hecha en una noche · Tú diriges, el agente ejecuta" right={n} />

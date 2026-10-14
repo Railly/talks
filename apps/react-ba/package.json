@@ -1,0 +1,12 @@
+{
+  "name": "@talks/react-ba",
+  "private": true,
+  "scripts": {
+    "sync": "cp -R ../../packages/deck/public/. public/",
+    "dev": "bun run sync && next dev",
+    "build": "bun run sync && next build",
+    "start": "next start"
+  },
+  "dependencies": { "@talks/deck": "workspace:*", "motion": "^12.23.0", "next": "^16.0.0", "react": "^19.2.0", "react-dom": "^19.2.0" },
+  "devDependencies": { "@types/node": "^22", "@types/react": "^19", "typescript": "^5.9.0" }
+}

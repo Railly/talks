@@ -1,0 +1,263 @@
+{
+ "title": "Second Brain: cómo construirlo y mantenerlo vivo",
+ "description": "Tu cerebro no está hecho para guardar todo. Organizá tus ideas, conectá lo que aprendés y convertí tus notas en workflows para estudiar, trabajar y crear con más contexto.",
+ "slides": [
+  {
+   "section": "Railly Hugo y Lorna Suriano Hernandez",
+   "layout": "cover",
+   "title": "Second Brain",
+   "subtitle": "Cómo construirlo y mantenerlo vivo"
+  },
+  {
+   "section": "Quiénes somos",
+   "layout": "cover",
+   "title": "Railly Hugo",
+   "subtitle": "Markdown, búsqueda y agentes"
+  },
+  {
+   "section": "Quiénes somos",
+   "layout": "cover",
+   "title": "Lorna Suriano Hernandez",
+   "subtitle": "Por qué documentar lo que hacés"
+  },
+  {
+   "section": "Qué es",
+   "layout": "definition",
+   "title": "Qué es un second brain",
+   "quote": "Un sistema externo para guardar ideas, notas y referencias, conectarlas y volver a usarlas."
+  },
+  {
+   "section": "Para qué",
+   "layout": "question",
+   "title": "¿Por qué es importante tener uno?"
+  },
+  {
+   "section": "En el trabajo",
+   "layout": "trio",
+   "title": "Como founder y profesional",
+   "items": [
+    {
+     "label": "Ideas"
+    },
+    {
+     "label": "Recorrido"
+    },
+    {
+     "label": "Personas"
+    }
+   ]
+  },
+  {
+   "section": "Al trabajar con IA",
+   "layout": "ownership",
+   "title": "Tu contexto, fuera del chat",
+   "items": [
+    {
+     "label": "Notas y decisiones",
+     "body": "Una copia que podés llevarte"
+    },
+    {
+     "label": "CLAUDE.md y AGENTS.md",
+     "body": "Cómo navegar ese contexto"
+    }
+   ]
+  },
+  {
+   "section": "Los archivos",
+   "layout": "comparison",
+   "title": "El vault es una carpeta de Markdown",
+   "items": [
+    {
+     "label": "Repositorio",
+     "body": "Decisiones, planes y resultados del trabajo"
+    },
+    {
+     "label": "Obsidian",
+     "body": "Leer, editar y recorrer backlinks"
+    }
+   ],
+   "footer": "Los archivos también se pueden abrir en otro editor"
+  },
+  {
+   "section": "Cómo se conecta",
+   "layout": "workflow",
+   "title": "De una captura a una respuesta con contexto",
+   "items": [
+    {
+     "label": "Captura",
+     "body": "Web Clipper y trx"
+    },
+    {
+     "label": "Markdown",
+     "body": "Notas con fuente"
+    },
+    {
+     "label": "QMD",
+     "body": "Buscar y recuperar"
+    },
+    {
+     "label": "Agente",
+     "body": "Leer y aplicar una skill"
+    }
+   ],
+   "footer": "Las decisiones nuevas vuelven al repositorio"
+  },
+  {
+   "section": "Capturar",
+   "layout": "capture",
+   "title": "De la web y el audio a tus notas",
+   "items": [
+    {
+     "label": "Obsidian Web Clipper",
+     "body": "Página o fragmento → Markdown con fuente"
+    },
+    {
+     "label": "trx",
+     "body": "Audio o video → transcripción revisada"
+    }
+   ],
+   "footer": "trx.crafter.run"
+  },
+  {
+   "section": "Recuperar contexto",
+   "layout": "retrieve",
+   "title": "QMD busca dentro de tus archivos",
+   "subtitle": "Palabras clave, similitud semántica y búsqueda híbrida",
+   "items": [
+    {
+     "label": "Buscar",
+     "body": "Una pregunta sobre el trabajo anterior"
+    },
+    {
+     "label": "Recuperar",
+     "body": "Notas y fragmentos relevantes"
+    },
+    {
+     "label": "Leer",
+     "body": "Las fuentes que necesita el agente"
+    }
+   ],
+   "footer": "github.com/tobi/qmd"
+  },
+  {
+   "section": "Guardar sesiones",
+   "layout": "workflow",
+   "title": "Cuando ocurra un evento, ejecutá una acción",
+   "items": [
+    {
+     "label": "Evento",
+     "body": "Stop o SessionEnd"
+    },
+    {
+     "label": "Exportador",
+     "body": "Contexto de la sesión → Markdown"
+    },
+    {
+     "label": "Índice",
+     "body": "qmd update → qmd embed"
+    },
+    {
+     "label": "Consulta",
+     "body": "Recuperar esa sesión después"
+    }
+   ],
+   "footer": "El historial del agente y el índice QMD son componentes distintos"
+  },
+  {
+   "section": "Usar el vault",
+   "layout": "trio",
+   "title": "Skills para tareas que repetís",
+   "items": [
+    {
+     "label": "inbox",
+     "body": "Clips → notas con fuentes"
+    },
+    {
+     "label": "content",
+     "body": "Notas y experiencia → ideas para publicar"
+    },
+    {
+     "label": "today y week",
+     "body": "Metas, avances y pendientes"
+    }
+   ],
+   "footer": "Cada skill define una tarea y el resultado que debe dejar"
+  },
+  {
+   "section": "Un ejemplo para contenido",
+   "layout": "retrieve",
+   "title": "Qué puedo contar de lo que aprendí",
+   "subtitle": "«Revisá mis clips de la semana y conectalos con mis proyectos.»",
+   "items": [
+    {
+     "label": "La fuente"
+    },
+    {
+     "label": "Mi aporte"
+    },
+    {
+     "label": "El formato"
+    }
+   ],
+   "footer": "Solicitud de ejemplo · la propuesta se revisa antes de publicar"
+  },
+  {
+   "section": "Mantenerlo vivo",
+   "layout": "rhythm",
+   "title": "Revisá las notas y el índice",
+   "items": [
+    {
+     "label": "Contenido",
+     "body": "Actualizar decisiones, conectar y archivar"
+    },
+    {
+     "label": "Sistema",
+     "body": "Comprobar búsqueda, hooks, permisos y backups"
+    }
+   ],
+   "footer": "Comprobá que podés encontrar algo que acabás de guardar"
+  },
+  {
+   "section": "Para empezar",
+   "layout": "closing",
+   "title": "Arrancá con agent-brain",
+   "subtitle": "Una base en Markdown con skills para tu propio vault",
+   "items": [
+    {
+     "label": "Cloná el repo"
+    },
+    {
+     "label": "Abrilo con Claude Code"
+    },
+    {
+     "label": "Corré /init"
+    }
+   ],
+   "quote": "https://github.com/Railly/agent-brain"
+  },
+  {
+   "section": "Contacto",
+   "layout": "closing",
+   "title": "Gracias por venir",
+   "items": [
+    {
+     "label": "Railly Hugo",
+     "body": "https://www.railly.dev/"
+    },
+    {
+     "label": "Lorna Suriano Hernandez",
+     "body": "https://www.linkedin.com/in/lornasuriano"
+    },
+    {
+     "label": "GitHub de Lorna",
+     "body": "https://github.com/lornasuriano"
+    }
+   ],
+   "footer": "Preguntas · Railly Hugo y Lorna Suriano Hernandez",
+   "qr": {
+    "url": "https://link.railly.dev",
+    "label": "Links de Railly"
+   }
+  }
+ ]
+}
