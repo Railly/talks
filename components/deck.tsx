@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useEffect, useState } from "react";
 import { EASE } from "./motion";
-import { slides } from "./slides";
+import { slides } from "./order";
 
 export function Deck() {
   const [[index, dir], setState] = useState<[number, number]>([0, 1]);

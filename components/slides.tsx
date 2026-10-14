@@ -8,7 +8,7 @@ import { EASE, Line, R, Words } from "./motion";
 
 export type Slide = { id: string; dark?: boolean; notes: string; render: (n: string) => ReactNode };
 
-function Eyebrow({ children }: { children: ReactNode }) {
+export function Eyebrow({ children }: { children: ReactNode }) {
   return (
     <R className="eyebrow">
       <i />
@@ -17,7 +17,7 @@ function Eyebrow({ children }: { children: ReactNode }) {
   );
 }
 
-function Foot({ left, right }: { left: ReactNode; right?: ReactNode }) {
+export function Foot({ left, right }: { left: ReactNode; right?: ReactNode }) {
   return (
     <R className="foot" i={6}>
       <span>{left}</span>
@@ -26,7 +26,7 @@ function Foot({ left, right }: { left: ReactNode; right?: ReactNode }) {
   );
 }
 
-function Mark({ children, delay = 0.7 }: { children: ReactNode; delay?: number }) {
+export function Mark({ children, delay = 0.7 }: { children: ReactNode; delay?: number }) {
   return (
     <span className="mark">
       <span>{children}</span>
@@ -35,7 +35,7 @@ function Mark({ children, delay = 0.7 }: { children: ReactNode; delay?: number }
   );
 }
 
-function Card({ i, tone, num, title, text, art }: { i: number; tone?: string; num?: string; title: string; text: string; art?: ReactNode }) {
+export function Card({ i, tone, num, title, text, art }: { i: number; tone?: string; num?: string; title: string; text: string; art?: ReactNode }) {
   return (
     <R i={i} className={`card ${tone ?? ""}`}>
       {art}
@@ -67,9 +67,9 @@ function Contours() {
   );
 }
 
-const tone = { green: "c-green", blue: "c-blue", lilac: "c-lilac", sand: "c-sand" };
+export const tone = { green: "c-green", blue: "c-blue", lilac: "c-lilac", sand: "c-sand" };
 
-export const slides: Slide[] = [
+export const base: Slide[] = [
   {
     id: "portada",
     dark: true,
@@ -274,7 +274,7 @@ export const slides: Slide[] = [
   },
   {
     id: "inviable",
-    notes: "Pendiente: afinar con la grabación de Hunter. Idea: como ingeniero, hoy es económicamente inviable no usar agentes, porque aceleran demasiado. Quien no los usa compite en desventaja de tiempo y costo.",
+    notes: "Lo que quiero llegar con la historia: hoy es económicamente inviable no usar agentes. No es una responsabilidad moral, es que aceleran demasiado. Si tuviera que elegir en mi empresa entre un ingeniero que hace todo a mano y uno que usa agentes, elijo al segundo. Si se van a quedar con una sola cosa de esta charla: usen agentes en su trabajo.",
     render: (n) => (
       <>
         <Eyebrow>La realidad económica</Eyebrow>
@@ -286,7 +286,7 @@ export const slides: Slide[] = [
             Aceleran demasiado. Un ingeniero que no los usa compite en desventaja de <strong>tiempo y costo</strong>.
           </R>
         </div>
-        <Foot left="Como ingenieros, no como usuarios" right={n} />
+        <Foot left="No es moral, es económico" right={n} />
         <Cube size={300} className="art" style={{ right: 100, top: 70, color: "var(--muted)" }} />
       </>
     ),
