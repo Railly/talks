@@ -5,7 +5,7 @@ import { Hub, Megaphone, Notebook, Orbit, Spark, Stack } from "./art";
 import { EASE, R, Words } from "./motion";
 import { Card, Eyebrow, Foot, Mark, type Slide, tone } from "./slides";
 
-function PhotoSlot({ label, style }: { label: string; style?: React.CSSProperties }) {
+export function PhotoSlot({ label, style }: { label: string; style?: React.CSSProperties }) {
   return (
     <motion.div
       className="photo-slot"
@@ -15,6 +15,22 @@ function PhotoSlot({ label, style }: { label: string; style?: React.CSSPropertie
       transition={{ duration: 0.8, ease: EASE, delay: 0.5 }}
     >
       <span>{label}</span>
+    </motion.div>
+  );
+}
+
+function Shot({ src, alt, caption, style, rotate = -1.2, delay = 0.45 }: { src: string; alt: string; caption?: string; style?: React.CSSProperties; rotate?: number; delay?: number }) {
+  return (
+    <motion.div
+      className="shot"
+      style={style}
+      initial={{ opacity: 0, y: 30, rotate: 0 }}
+      animate={{ opacity: 1, y: 0, rotate }}
+      transition={{ duration: 0.9, ease: EASE, delay }}
+    >
+      {/* biome-ignore lint/performance/noImgElement: static screenshot */}
+      <img src={src} alt={alt} />
+      {caption && <span className="caption">{caption}</span>}
     </motion.div>
   );
 }
@@ -96,7 +112,7 @@ export const extra: Slide[] = [
     notes: "Historia: en la universidad, con el profesor Herminio Paucar, tenía un proyecto de realidad aumentada. No tenía idea de cómo hacerlo ni sabía inglés, y todos los recursos estaban en inglés. Me tomó mes y medio, dos meses. Con marcadores, al apuntar con la cámara salía el sistema solar rotando. El profesor me mandó a ayudar a otros alumnos, incluso de ciclos superiores.",
     render: (n) => (
       <>
-        <Eyebrow>Una historia · En la universidad</Eyebrow>
+        <Eyebrow>Una historia · 2020, en la universidad</Eyebrow>
         <div className="body" style={{ maxWidth: 820 }}>
           <R as="h2" i={1}>Realidad aumentada, con el profesor Herminio Paucar.</R>
           <div className="stats">
@@ -106,7 +122,7 @@ export const extra: Slide[] = [
           <R i={4} as="p" className="lead">Marcadores, una cámara y el sistema solar rotando encima.</R>
         </div>
         <Foot left="Antes" right={n} />
-        <PhotoSlot label="Foto o video del proyecto original" style={{ right: 96, top: 170, width: 560, height: 520 }} />
+        <Shot src="/img/ar-2020.png" alt="AR Solar System, 2020" caption="AR-Solar-System · Computación Gráfica 2020-II" style={{ right: 90, top: 160, width: 600 }} />
       </>
     ),
   },
@@ -116,18 +132,21 @@ export const extra: Slide[] = [
     notes: "Hace poco hice el ejercicio de replicarlo con las tecnologías actuales. Me tomó una hora o menos, con mucha más calidad. Corre en el navegador, sin hardware especial, y le agregué manipulación con gestos: rotas con un dedo. Lo que me tomó mes y medio como principiante, el agente lo hizo con calidad superior en una hora. Estamos viendo el futuro literalmente. (Mostrar video o link.)",
     render: (n) => (
       <>
-        <Eyebrow>La misma idea · Hoy</Eyebrow>
-        <div className="body" style={{ maxWidth: 820 }}>
+        <Eyebrow>La misma idea · 2026</Eyebrow>
+        <div className="body" style={{ maxWidth: 640 }}>
           <h2><Words text="El mismo proyecto, en una hora." /></h2>
-          <div className="stats">
-            <R i={4} className="stat"><b>&lt;1 hora</b><span>con un agente</span></R>
+          <div className="stats compact">
+            <R i={4} className="stat"><b>&lt;1&nbsp;h</b><span>con un agente</span></R>
             <R i={5} className="stat"><b>Web</b><span>sin hardware especial</span></R>
             <R i={6} className="stat"><b>Gestos</b><span>rotas con un dedo</span></R>
           </div>
           <R i={7} as="p" className="lead">Y con <span className="hl">mucha más calidad</span>.</R>
         </div>
         <Foot left="Hoy" right={n} />
-        <PhotoSlot label="Video del proyecto nuevo" style={{ right: 96, top: 170, width: 560, height: 520 }} />
+        <motion.div className="shot video" style={{ right: 70, top: 170, width: 720 }} initial={{ opacity: 0, y: 30, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.9, ease: EASE, delay: 0.4 }}>
+          <video src="/video/solar-2026.mp4" poster="/img/solar-poster.jpg" autoPlay muted loop playsInline />
+          <span className="caption">solar-system.crafter.run</span>
+        </motion.div>
       </>
     ),
   },
@@ -239,20 +258,61 @@ export const extra: Slide[] = [
     ),
   },
   {
-    id: "historia-builder",
+    id: "cris",
     dark: true,
-    notes: "PENDIENTE confirmar nombre y detalles. Historia de un builder peruano que conocí por internet, que ganó en un reto de midudev participando globalmente desde su ciudad, ganando en dólares. Lo voy a conocer en persona por primera vez este sábado: lo invité a Lima al Hot Reload. Una persona correcta puede cambiarte el día por completo.",
+    notes: "Les quiero presentar a un crack: Cristian Olivera Chávez. Estudia en la Universidad Nacional Micaela Bastidas de Apurímac. Ganó la Hackathon 2026 de midudev y CubePath con openvid, un editor de video en el navegador. Midudev lo anunció en vivo como ganador. Lo conocí por internet y este sábado lo conozco en persona: lo invité a Lima al Hot Reload. Futuro miembro de Crafter Station. Por esto apoyo el talento.",
     render: (n) => (
       <>
-        <Eyebrow>04 / Empezar temprano · Una historia</Eyebrow>
-        <div className="body" style={{ maxWidth: 900 }}>
-          <h2><Words text="Desde su ciudad, compitiendo con el mundo." /></h2>
-          <R i={6} as="p" className="lead">
-            Un builder peruano que conocí por internet. Ganó participando globalmente. Este sábado lo conozco en persona, en Lima.
-          </R>
+        <Eyebrow>04 / Empezar temprano · Un crack</Eyebrow>
+        <div className="body" style={{ maxWidth: 860 }}>
+          <motion.div className="avatar" initial={{ opacity: 0, scale: 0.7 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, ease: EASE, delay: 0.1 }}>
+            {/* biome-ignore lint/performance/noImgElement: avatar */}
+            <img src="/img/cris.png" alt="Cristian Olivera Chávez" />
+          </motion.div>
+          <h2><Words text="Cristian Olivera Chávez." i={1} /></h2>
+          <div className="stats">
+            <R i={4} className="stat"><b>1.er lugar</b><span>Hackathon 2026 de midudev y CubePath</span></R>
+            <R i={5} className="stat"><b>openvid</b><span>editor de video en el navegador</span></R>
+          </div>
+          <R i={6} as="p" className="lead">Universidad Nacional Micaela Bastidas de Apurímac. Este sábado lo conozco en persona, en Lima.</R>
+        </div>
+        <Foot left="@CrisOliveraDev · github.com/cristianolivera1" right={n} />
+        <Shot src="/img/cris-linkedin.png" alt="Post de LinkedIn de Cristian al ganar la hackathon" style={{ right: 110, top: 70, width: 470 }} rotate={1.5} />
+      </>
+    ),
+  },
+  {
+    id: "cris-web",
+    notes: "Su web es un buen ejemplo de landing personal: no es solo un CV y redes, que son indispensables, sino que muestra todos sus proyectos, con qué los hizo y qué hacen. Eso es lo que un reclutador quiere ver.",
+    render: (n) => (
+      <>
+        <Eyebrow>Publicar · Un buen ejemplo</Eyebrow>
+        <div className="body" style={{ maxWidth: 560 }}>
+          <R as="h2" i={1}>Tu web es tu <Mark delay={0.9}>vitrina</Mark>.</R>
+          <R i={2} as="p" className="lead">CV y redes son indispensables. Pero lo que convence son <strong>los proyectos</strong>: qué hacen y con qué los hiciste.</R>
+        </div>
+        <Foot left="cristianolivera1.github.io" right={n} />
+        <Shot src="/img/cris-web.png" alt="Web personal de Cristian Olivera" style={{ right: 70, top: 150, width: 860 }} rotate={-1} />
+      </>
+    ),
+  },
+  {
+    id: "cris-publica",
+    dark: true,
+    notes: "Y publica todo. Este tweet es de hace tres días: lanza Mdverse, en inglés, construyendo en público. Y su post de LinkedIn al ganar la hackathon: estuvo casi dos días sin luz ni teléfono en su ciudad, se conectó, vio el directo de midu y se enteró de que había ganado. 780 reacciones. Internet, creérsela, publicar.",
+    render: (n) => (
+      <>
+        <Eyebrow>Publicar · En público y en inglés</Eyebrow>
+        <div className="body" style={{ maxWidth: 520 }}>
+          <R as="h2" i={1}>Shipea en público.</R>
+          <div className="stats" style={{ flexDirection: "column", gap: 28 }}>
+            <R i={2} className="stat"><b>780</b><span>reacciones en LinkedIn al ganar</span></R>
+            <R i={3} className="stat"><b>En inglés</b><span>lanza sus proyectos para el mundo</span></R>
+          </div>
         </div>
         <Foot left="Internet + creérsela + publicar" right={n} />
-        <PhotoSlot label="Foto del builder (pendiente)" style={{ right: 110, top: 190, width: 440, height: 480 }} />
+        <Shot src="/img/cris-tweet.png" alt="Tweet de Cristian lanzando Mdverse" style={{ right: 470, top: 120, width: 520 }} rotate={-2} delay={0.4} />
+        <Shot src="/img/cris-linkedin.png" alt="Post de LinkedIn de Cristian" style={{ right: 70, top: 70, width: 420 }} rotate={2} delay={0.65} />
       </>
     ),
   },
@@ -265,5 +325,5 @@ export const ORDER = [
   "pensar", "no-delega", "criterio", "verificar",
   "construir", "errores",
   "investigar", "pregunta",
-  "temprano", "historia-builder", "crafter", "cierre",
+  "temprano", "cris", "cris-web", "cris-publica", "crafter", "cierre",
 ];

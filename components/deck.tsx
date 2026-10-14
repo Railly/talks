@@ -51,7 +51,7 @@ export function Deck() {
   return (
     <>
       <div className="viewport" onClick={(e) => go(e.clientX > innerWidth / 2 ? index + 1 : index - 1)}>
-        <div className="stage" style={{ transform: `scale(${scale})` }}>
+        <div className="stage" style={{ transform: `translate(-50%, -50%) scale(${scale})` }}>
           <AnimatePresence initial={false} custom={dir} mode="popLayout">
             <motion.section
               key={slide.id}
