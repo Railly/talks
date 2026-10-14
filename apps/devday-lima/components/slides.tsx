@@ -3,6 +3,7 @@
 import { Card, EASE, Eyebrow, Foot, Mark, R, type Slide, tone, Words } from "@talks/deck";
 import { motion } from "motion/react";
 import { CORNER, COVER, Faces } from "./faces";
+import { Duo, Full, Side } from "./media";
 
 function Stat({ i, value, label }: { i: number; value: string; label: string }) {
   return (
@@ -27,7 +28,7 @@ function Section({ k, title, sub, n }: { k: string; title: string; sub: string; 
   );
 }
 
-export const slides: Slide[] = [
+const all: Slide[] = [
   {
     id: "portada",
     notes: "Bienvenida. Hoy: recap de lo que OpenAI lanzó en DevDay 2026 y después construimos con Codex. Gracias a la FISI por el espacio.",
@@ -89,7 +90,7 @@ export const slides: Slide[] = [
     id: "s-recap",
     dark: true,
     notes: "En el keynote Sam habló de unos veinte lanzamientos. No vamos a ver todos: solo los que cambian cómo construimos.",
-    render: (n) => <Section k="01 / Recap" title="Unos 20 lanzamientos en un día." sub="Estos son los que más cambian cómo construimos." n={n} />,
+    render: (n) => <Section k="Agentes siempre activos" title="Unos 20 lanzamientos en un día." sub="Empezamos por el que abrió el keynote: Dots." n={n} />,
   },
   {
     id: "sol",
@@ -169,7 +170,7 @@ export const slides: Slide[] = [
     id: "s-codex",
     dark: true,
     notes: "Ahora lo que más nos importa esta noche: Codex.",
-    render: (n) => <Section k="02 / Codex" title="Codex dejó la laptop." sub="Cloud, un CLI nuevo, revisión de código y seguridad." n={n} />,
+    render: (n) => <Section k="Codex" title="Codex dejó la laptop." sub="Cloud, un CLI nuevo, revisión de código y seguridad." n={n} />,
   },
   {
     id: "cloud",
@@ -287,7 +288,7 @@ export const slides: Slide[] = [
     id: "s-builders",
     dark: true,
     notes: "Cuarto bloque, el más importante si quieren monetizar: ChatGPT como plataforma.",
-    render: (n) => <Section k="04 / Para builders" title="1.200 millones de personas por semana." sub="ChatGPT ahora es una plataforma para tu producto." n={n} />,
+    render: (n) => <Section k="Para builders" title="1.200 millones de personas por semana." sub="ChatGPT ahora es una plataforma para tu producto." n={n} />,
   },
   {
     id: "platform",
@@ -350,7 +351,7 @@ export const slides: Slide[] = [
     id: "s-build",
     dark: true,
     notes: "Pasamos a construir. Primero una demo en vivo con Codex, después ustedes.",
-    render: (n) => <Section k="05 / Build session" title="You can just ship things." sub="Demo en vivo y luego construyen ustedes." n={n} />,
+    render: (n) => <Section k="Build session" title="You can just ship things." sub="Demo en vivo y luego construyen ustedes." n={n} />,
   },
   {
     id: "rules",
@@ -393,3 +394,459 @@ export const slides: Slide[] = [
     ),
   },
 ];
+
+const KEY = "Keynote, DevDay 2026";
+
+const more: Slide[] = [
+  {
+    id: "originals",
+    dark: true,
+    notes: "Abrir con energía: el video Codex Originals. «Estos son los builders, los makers de nuestro tiempo». Dejarlo correr unos segundos sin hablar.",
+    render: () => <Full clip="originals" title="These are the builders." sub="Los makers de nuestro tiempo. Eso son ustedes esta noche." src="Codex Originals · OpenAI" />,
+  },
+  {
+    id: "community",
+    notes: "Del video Building the Codex community. El programa empezó con la idea de tener 15 a 20 ambassadors. Hoy son más de 150 en más de 80 países, con más de 300 eventos. En Build Week hubo más de 60 eventos en una semana. Su evento favorito: los ambassadors de Kochi, India, que hicieron un evento de Codex en un metro en movimiento. Hoy Lima se suma a esa lista.",
+    render: (n) => (
+      <>
+        <Eyebrow>La comunidad Codex</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>De 15 ambassadors a más de 150.</R>
+          <div className="stats" style={{ flexWrap: "wrap", rowGap: 28 }}>
+            <R i={2} className="stat"><b>150+</b><span>ambassadors</span></R>
+            <R i={3} className="stat"><b>80+</b><span>países</span></R>
+            <R i={4} className="stat"><b>300+</b><span>eventos</span></R>
+          </div>
+          <R i={5} as="p" className="lead">Hasta un evento de Codex en un metro en movimiento, en Kochi. Hoy se suma <strong>Lima</strong>.</R>
+        </div>
+        <Foot left="Building the Codex community" right={n} />
+        <Side clip="community-metro" src="Kochi, India" style={{ width: 420, top: 110, right: 520 }} />
+        <Side clip="community-buildweek" src="Build Week" style={{ width: 420, top: 380, right: 70 }} />
+      </>
+    ),
+  },
+  {
+    id: "dots-stage",
+    dark: true,
+    notes: "El anuncio con el que abrió el keynote: Dots. «Piensen en esa IA del futuro que imaginaban: sabe qué pasa, sabe qué te importa, no tienes que decirle cada cosa».",
+    render: () => <Full clip="dots-stage" title="«Today, we're introducing Dots.»" sub="Agentes siempre activos, con su propia identidad." src={KEY} />,
+  },
+  {
+    id: "dots-alf",
+    notes: "El video de lanzamiento de Dots. «Hey, I'm your dot. Te voy a llamar Alfred.» Le pone nombre y avatar, y el dot sigue con la web, el deck del board, la migración de la app y hasta el pastel de una boda.",
+    render: () => <Full clip="dots-alf" title="«I'm gonna call you Alfred.»" sub="Le pones nombre, avatar y responsabilidades." src="Introducing dots" />,
+  },
+  {
+    id: "dots-mobile",
+    notes: "Dots también en móvil, iOS y Android. Se configura solo: botón Meet Dot, le das acceso a calendario y correo, y tiene su propia computadora y acceso a la tuya. En la demo le pide por voz que prototipe un widget de iOS.",
+    render: (n) => (
+      <>
+        <Eyebrow>Dots en el celular</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>Lo llamas por voz y prototipa.</R>
+          <R i={2} as="p" className="lead">iOS y Android. Tu dot tiene su propia computadora y acceso a la tuya. En la demo, le pide un <strong>widget de iOS</strong> por llamada.</R>
+        </div>
+        <Foot left="Set up your dot in the ChatGPT mobile app" right={n} />
+        <Side clip="dots-mobile" src="ChatGPT mobile" />
+      </>
+    ),
+  },
+  {
+    id: "space-video",
+    dark: true,
+    notes: "ChatGPT Space en acción: le pide a ChatGPT que junte todo el chat en una página con prioridades y decisiones, la comparte con Vic de marketing y editan en tiempo real. Tu chat queda privado; la página es compartida.",
+    render: () => <Full clip="space-video" title="Del chat a una página compartida." sub="Prioridades, decisiones y pendientes, editados en tiempo real por personas y ChatGPT." src="Work with your team in ChatGPT Space" />,
+  },
+  {
+    id: "single-player",
+    dark: true,
+    notes: "Jason, en From Single Player to Multiplayer: hace seis meses él era el pegamento de todo. Un super IC que micromaneja agentes. Su meta ahora es que el equipo entero avance, no solo él.",
+    render: () => <Full clip="single-player" title="Hace seis meses: single player." sub="«Era el pegamento de todos estos sistemas, y el cuello de botella.»" src="From Single Player to Multiplayer" />,
+  },
+  {
+    id: "three-acts",
+    notes: "Sus tres actos: 1, juntar el contexto (escritorio, navegador, Slack, la cabeza de tus compañeros). 2, mantener el trabajo en movimiento. 3, compartirlo con el equipo y subirles el nivel.",
+    render: (n) => (
+      <>
+        <Eyebrow>Multiplayer, en tres actos</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>Contexto, movimiento, equipo.</R>
+          <div className="cards">
+            <Card i={2} tone={tone.blue} num="01" title="Juntar el contexto" text="Escritorio, navegador, Slack y la cabeza de tu equipo." />
+            <Card i={3} tone={tone.green} num="02" title="Mantenerlo en movimiento" text="Automatizaciones y un dot que hace seguimiento." />
+            <Card i={4} tone={tone.lilac} num="03" title="Compartirlo" text="Skills y plugins que el equipo reutiliza." />
+          </div>
+        </div>
+        <Foot left="Jason, Developer Experience en OpenAI" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "page-instructions",
+    dark: true,
+    notes: "Page instructions: un AGENTS.md para tus documentos. Defines cómo se actualiza cada página, y así los agentes de todos tus compañeros pueden contribuir sin hacer un desastre.",
+    render: () => <Full clip="page-instructions" title="Un AGENTS.md para tus documentos." sub="Así los agentes de todo el equipo contribuyen sin romper nada." src="From Single Player to Multiplayer" />,
+  },
+  {
+    id: "champions",
+    notes: "How OpenAI Puts ChatGPT to Work: entrevistaron a los usuarios más intensivos de ChatGPT Work dentro de OpenAI. Ejemplo: un dot revisó 90 días de transcripciones de llamadas de venta y encontró razones de deals perdidos que no estaban en el CRM.",
+    render: (n) => (
+      <>
+        <Eyebrow>ChatGPT Work</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>90 días de llamadas, en una tarde.</R>
+          <R i={2} as="p" className="lead">Un dot revisó 90 días de transcripciones de ventas y encontró por qué se perdían deals. <strong>Eso no estaba en el CRM.</strong></R>
+        </div>
+        <Foot left="How OpenAI Puts ChatGPT to Work" right={n} />
+        <Side clip="champions" src="Power users en OpenAI" />
+      </>
+    ),
+  },
+  {
+    id: "s-models",
+    dark: true,
+    notes: "Bloque de modelos, velocidad y costo.",
+    render: (n) => <Section k="Modelos y costo" title="Más inteligente, más rápido, más barato." sub="GPT-6.1 Sol, Ultrafast y cómo dejar de pagar de más." n={n} />,
+  },
+  {
+    id: "ultrafast-stage",
+    dark: true,
+    notes: "Ultrafast en el escenario.",
+    render: () => <Full clip="ultrafast-stage" title="Ultrafast." sub="En la API, ChatGPT y Codex." src={KEY} />,
+  },
+  {
+    id: "ultrafast-compare",
+    notes: "Comparación lado a lado: misma tarea, standard contra ultrafast. Pedirle al público que mire cuál termina primero.",
+    render: (n) => (
+      <>
+        <Eyebrow>Lado a lado</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>La misma tarea. ¿Cuál termina primero?</R>
+          <Duo items={[{ clip: "ultrafast-rocket", title: "Keynote", text: "Un cohete generado con y sin Ultrafast." }, { clip: "ultrafast-car", title: "Demo", text: "Standard contra Ultrafast en una simulación." }]} />
+        </div>
+        <Foot left="Ultrafast, now in the API, ChatGPT Work and Codex" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "pro500",
+    dark: true,
+    notes: "Pro 500: el plan con más uso, 25 veces Plus, con Ultrafast y uso en apps de partners con Sign in with ChatGPT. Vuelve Pro 200.",
+    render: () => <Full clip="pro500" title="Pro 500: 25x el uso de Plus." sub="Con Ultrafast. Y vuelve Pro 200." src={KEY} />,
+  },
+  {
+    id: "cost-per-task",
+    notes: "Stop Overpaying for Intelligence. Error número uno: mirar el precio por token. Lo que importa es el costo por tarea. Un modelo barato puede gastar más tokens o no terminar, y entonces una persona tiene que intervenir. Ejemplo del chatbot de aerolínea que terminó en un humano. Perplexity: Astra fue 9% más preciso a la mitad de costo. Notion: al migrar a 5.6 Sol, mejor precisión y la mitad del costo por tarea.",
+    render: (n) => (
+      <>
+        <Eyebrow>Stop overpaying for intelligence</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>Mide el costo por <Mark delay={0.9}>tarea</Mark>, no por token.</R>
+          <div className="cards">
+            <Card i={2} tone={tone.sand} title="El chatbot barato" text="No resolvió el caso y terminó en una persona. El costo real incluye al humano." />
+            <Card i={3} tone={tone.blue} title="Perplexity" text="Con Astra, 9% más preciso a la mitad del costo." />
+            <Card i={4} tone={tone.green} title="Notion" text="Al migrar a 5.6 Sol, mejor precisión y la mitad del costo por tarea." />
+          </div>
+        </div>
+        <Foot left="Equipo de AI Deployment Engineering, OpenAI" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "levers",
+    dark: true,
+    notes: "Cuatro palancas más allá del modelo. 1, prompt caching para el texto repetido. 2, programmatic tool calling: un programa coordina las tools y devuelve un resumen; Clio redujo 38% los prompt tokens sin perder calidad. 3, reasoning effort: empieza bajo en tareas rutinarias y mide con evals. 4, Batch: ventana de 24 horas a 50% menos. Y Luna maxing: con reasoning alto, Luna le gana a modelos más grandes de generaciones anteriores.",
+    render: (n) => (
+      <>
+        <Eyebrow>Cuatro palancas</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>Antes de cambiar de modelo, prueba esto.</R>
+          <div className="cards" style={{ ["--n" as string]: 4 }}>
+            <Card i={2} num="01" title="Prompt caching" text="Reutiliza el texto que se repite." />
+            <Card i={3} num="02" title="Tool calling programático" text="Clio: 38% menos prompt tokens." />
+            <Card i={4} num="03" title="Reasoning effort" text="Empieza bajo y mide con evals." />
+            <Card i={5} num="04" title="Batch" text="24 horas de espera, 50% menos." />
+          </div>
+        </div>
+        <Foot left="Y prueba «Luna maxing»: Luna con reasoning alto" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "s-apis",
+    dark: true,
+    notes: "Bloque de APIs para construir.",
+    render: (n) => <Section k="APIs" title="Lo que puedes construir desde mañana." sub="Decisions, Agents, GPT Live y la plataforma." n={n} />,
+  },
+  {
+    id: "decisions-demo",
+    notes: "La demo de Decisions API: le dan frames de una carretera y decide si el auto se queda en su carril o va a la izquierda o derecha. Aunque suban la velocidad, sigue esquivando, en una fracción del tiempo de un modelo de razonamiento.",
+    render: (n) => (
+      <>
+        <Eyebrow>Decisions API · Demo</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>Izquierda, centro o derecha.</R>
+          <R i={2} as="p" className="lead">Le pasan frames de la carretera y elige el carril. <strong>Sin acelerar el video.</strong></R>
+        </div>
+        <Foot left="Introducing the Decisions API" right={n} />
+        <Side clip="decisions-driving" src="Decisions API" />
+      </>
+    ),
+  },
+  {
+    id: "decisions-more",
+    notes: "Más casos: leads de ventas clasificados en menos de 100 ms; un personaje que elige su expresión mientras GPT Live 1 habla; y un robot de Hugging Face.",
+    render: (n) => (
+      <>
+        <Eyebrow>Decisions API · Casos</Eyebrow>
+        <div className="body">
+          <Duo three items={[{ clip: "decisions-sales", title: "Ventas", text: "Leads clasificados en menos de 100 ms." }, { clip: "decisions-frog", title: "Voz", text: "La expresión del personaje mientras habla." }, { clip: "decisions-robot", title: "Robótica", text: "Un robot programable de Hugging Face." }]} />
+        </div>
+        <Foot left="Introducing the Decisions API" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "agents-harness",
+    notes: "Agents API: tu app habla con el harness hospedado, y el harness con el sandbox que elijas. Ejemplo: un agente que investiga incidentes en producción con MCPs de observabilidad y una skill con el runbook.",
+    render: (n) => (
+      <>
+        <Eyebrow>Agents API · Arquitectura</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>Tu app, el harness, tu sandbox.</R>
+          <R i={2} as="p" className="lead">OpenAI maneja orquestación, sesiones y contexto. Tú eliges herramientas por <strong>MCP</strong>, instrucciones con <strong>skills</strong> y dónde corre.</R>
+        </div>
+        <Foot left="Introducing the Agents API" right={n} />
+        <Side clip="agents-harness" src="Agents API" />
+      </>
+    ),
+  },
+  {
+    id: "ptc",
+    dark: true,
+    notes: "El número que más me impactó: con tool calls directos, 170.126 tokens de resultados entraron al modelo. Con programmatic tool calling, 11. El modelo filtra los logs en código en vez de leerlos todos.",
+    render: (n) => (
+      <>
+        <Eyebrow>Programmatic tool calling</Eyebrow>
+        <div className="body">
+          <div className="stats" style={{ gap: 120 }}>
+            <R i={1} className="stat"><b style={{ fontSize: 150 }}>170.126</b><span>tokens con tool calls directos</span></R>
+            <R i={3} className="stat"><b style={{ fontSize: 150 }} className="hl">11</b><span>tokens con programmatic tool calling</span></R>
+          </div>
+          <R i={5} as="p" className="lead">El agente filtra los logs en código. El modelo solo lee lo que importa.</R>
+        </div>
+        <Foot left="Introducing the Agents API" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "gpt-live",
+    notes: "GPT Live 1 en la API: full duplex, escucha y habla al mismo tiempo, aguanta ruido e interrupciones, y delega razonamiento y tools a un modelo de backend. Cinco centavos por minuto el modelo de frente; el backend se cobra aparte.",
+    render: (n) => (
+      <>
+        <Eyebrow>GPT Live 1 · En la API</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>Escucha y habla al mismo tiempo.</R>
+          <Duo three items={[{ clip: "live-board", title: "Full duplex", text: "Aguanta ruido e interrupciones." }, { clip: "live-wave", title: "Frontend y backend", text: "Delega tools y razonamiento." }, { clip: "live-price", title: "$0.05 por minuto", text: "El modelo de frente." }]} />
+        </div>
+        <Foot left="GPT-Live-1 is now in the API" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "aws",
+    dark: true,
+    notes: "Bedrock Managed Agents powered by OpenAI: construyes agentes de OpenAI dentro de AWS, junto a tus datos. También Astra, Ultrafast, Codex y ChatGPT Work para clientes de AWS.",
+    render: () => <Full clip="aws" title="OpenAI dentro de AWS." sub="Bedrock Managed Agents, Astra con Ultrafast, Codex y ChatGPT Work." src={KEY} />,
+  },
+  {
+    id: "features-300",
+    dark: true,
+    notes: "Dominic abrió Codex Has Left the Laptop así: más de 300 features de Codex en el último año. Es imposible seguirles el ritmo, por eso esta charla.",
+    render: () => <Full clip="features-300" title="300+ features de Codex en un año." sub="Imposible seguirles el ritmo. Por eso estamos aquí." src="Codex Has Left The Laptop" />,
+  },
+  {
+    id: "macmini",
+    dark: true,
+    notes: "Pregunta al público, a mano alzada: ¿quién compró una Mac Mini, una Raspberry Pi o un VPS solo para tener agentes corriendo? Más máquinas significa más mantenimiento: setup, updates, disco.",
+    render: () => <Full clip="macmini" title="¿Quién compró una Mac Mini para sus agentes?" sub="Setup, updates, espacio en disco. Más máquinas, más mantenimiento." src="Codex Has Left The Laptop" />,
+  },
+  {
+    id: "cloud-stage",
+    dark: true,
+    notes: "La respuesta: Codex en la nube.",
+    render: () => <Full clip="cloud-stage" title="Codex, en la nube." src={KEY} />,
+  },
+  {
+    id: "cloud-demo",
+    notes: "En el composer eliges dónde trabaja: esta computadora, cloud o remoto. El onboarding del entorno es un chat: investiga qué necesita el repo, red, variables y secretos. Queda un snapshot reutilizable para todo el equipo.",
+    render: (n) => (
+      <>
+        <Eyebrow>Codex Cloud · Demo</Eyebrow>
+        <div className="body">
+          <Duo items={[{ clip: "cloud-workin", title: "Elige dónde", text: "Esta computadora, cloud o remoto." }, { clip: "cloud-env", title: "Entorno por chat", text: "Red, variables y secretos. Queda un snapshot." }]} />
+        </div>
+        <Foot left="Meet the all new Codex Cloud" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "cloud-phone",
+    dark: true,
+    notes: "«Ya no necesito dejar esto abierto»: cierra la laptop y la tarea sigue. La retoma desde el celular, incluso por voz mientras camina.",
+    render: () => <Full clip="cloud-phone" title="Cierra la laptop. Sigue desde el celular." sub="Incluso por voz, mientras caminas." src="Meet the all new Codex Cloud" />,
+  },
+  {
+    id: "shader",
+    notes: "Ejemplo de Dominic: mandó un AppShot de un shader diseñado en Figma a su entorno cloud. Codex lo implementó con el plugin de Figma, lo probó y armó un playground desplegado para ajustarlo.",
+    render: (n) => (
+      <>
+        <Eyebrow>Codex Cloud · Un caso</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>De Figma a un shader, en la nube.</R>
+          <R i={2} as="p" className="lead">Un AppShot del diseño, el plugin de Figma y un <strong>playground desplegado</strong> para ajustarlo.</R>
+        </div>
+        <Foot left="Codex Has Left The Laptop" right={n} />
+        <Side clip="shader" src="Codex Has Left The Laptop" />
+      </>
+    ),
+  },
+  {
+    id: "cli-stage",
+    dark: true,
+    notes: "El Codex CLI renovado, en vivo en el keynote: «construye una app que elija tres asistentes al azar para darles entradas gratis el próximo año». Con Ultrafast, listo en segundos.",
+    render: () => <Full clip="cli-stage" title="El CLI, renovado y en vivo." sub="Una app para sortear entradas entre asistentes, en segundos." src={KEY} />,
+  },
+  {
+    id: "cli-demo",
+    notes: "Del video Meet the New Codex CLI: la vista de agentes con todas las tareas, y el control remoto desde el celular para ver progreso y responder preguntas lejos del teclado.",
+    render: (n) => (
+      <>
+        <Eyebrow>Codex CLI · Demo</Eyebrow>
+        <div className="body">
+          <Duo items={[{ clip: "cli-agents", title: "Agent command center", text: "Filtra, agrupa y salta a cualquier tarea." }, { clip: "cli-phone", title: "Remote control", text: "Tus tareas locales, desde el celular." }]} />
+        </div>
+        <Foot left="Meet the New Codex CLI" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "review-demo",
+    notes: "Code review: un inbox con los PRs de todos tus repos, la primera pasada automática y un chat privado por PR. Puedes personalizar cómo revisa: resumen corto y análisis de riesgo.",
+    render: (n) => (
+      <>
+        <Eyebrow>Code review en Codex</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>La revisión ya no es el cuello de botella.</R>
+          <R i={2} as="p" className="lead">Inbox de PRs, primera pasada automática y un chat privado por PR con tus guías.</R>
+        </div>
+        <Foot left="Code review is no longer the bottleneck" right={n} />
+        <Side clip="review-inbox" src="Codex code review" />
+      </>
+    ),
+  },
+  {
+    id: "security",
+    dark: true,
+    notes: "Codex Security Cloud: escanea continuamente, deduplica y prepara fixes verificados. Escaneos programados e interfaz nueva.",
+    render: () => <Full clip="security-cloud" title="Codex Security Cloud." sub="Encuentra vulnerabilidades y prepara fixes verificados para que los revises." src={KEY} />,
+  },
+  {
+    id: "grafana",
+    notes: "Production Monitoring with Codex: son las 3 a.m., los errores de checkout suben a casi 20%. Codex con una skill junta la evidencia de Grafana, Kubernetes y el código, propone el fix y tú apruebas. El error vuelve a 0, sin hacer rollback: siguen en V2.",
+    render: (n) => (
+      <>
+        <Eyebrow>Codex en producción</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>3 a.m. Errores al 20%.</R>
+          <R i={2} as="p" className="lead">Codex junta la evidencia, propone el fix y tú apruebas. Error en 0, <strong>sin rollback</strong>.</R>
+        </div>
+        <Foot left="Production Monitoring with Codex" right={n} />
+        <Side clip="grafana" src="Grafana + Codex" />
+      </>
+    ),
+  },
+  {
+    id: "s-eco",
+    dark: true,
+    notes: "Bloque de ecosistema: open source, partners y cómo distribuir lo que construyas.",
+    render: (n) => <Section k="Ecosistema" title="Open source, partners y distribución." sub="Lo que otros están construyendo encima." n={n} />,
+  },
+  {
+    id: "openclaw",
+    dark: true,
+    notes: "ClawLabs, con Peter, el creador de OpenClaw: plataforma open source de agentes persistentes, de la OpenClaw Foundation, una nonprofit independiente que OpenAI apoya. Su concepto: no seas un meat proxy, el humano que solo pasa mensajes entre la IA y el equipo. Hicieron visibles las sesiones de todo el equipo: incómodo un día, después normal. «Show me the prompt.»",
+    render: () => <Full clip="openclaw-peter" title="«Let's not be a meat proxy.»" sub="OpenClaw: sesiones visibles para todo el equipo. «Show me the prompt.»" src="ClawLabs: Building Open Source Together" />,
+  },
+  {
+    id: "jellyware",
+    notes: "Otra idea de Peter: los dashboards son una sesión que genera un artefacto y una automatización que lo actualiza. Iteramos tan rápido que ya no es software, es jellyware. Y su tesis: los modelos mejoran tan rápido que los flujos de hace seis meses ya se sienten viejos, hasta el CI.",
+    render: (n) => (
+      <>
+        <Eyebrow>OpenClaw</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>¿Software? <Mark delay={0.9}>Jellyware</Mark>.</R>
+          <R i={2} as="p" className="lead">Un dashboard es una sesión que genera un artefacto y una automatización que lo actualiza. <strong>Lo cambias con una frase.</strong></R>
+        </div>
+        <Foot left="ClawLabs: Building Open Source Together" right={n} />
+        <Side clip="openclaw-server" src="OpenClaw" />
+      </>
+    ),
+  },
+  {
+    id: "partners",
+    notes: "Sesiones de partners. Qodo, «el mejor amigo de Codex»: junta el conocimiento tribal del equipo para darle contexto a Codex y revisar lo que escribe. Stack Overflow: Stack Internal y Stack Overflow for Agents, donde no solo humanos sino agentes interactúan. Higgsfield: agentes que eligen modelos y levantan GPUs; un stream interactivo pasó de 2 a más de 10 horas.",
+    render: (n) => (
+      <>
+        <Eyebrow>Partners en DevDay</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>Construyendo encima de Codex.</R>
+          <div className="cards">
+            <Card i={2} tone={tone.lilac} title="Qodo" text="El contexto tribal del equipo, para generar y revisar con Codex." />
+            <Card i={3} tone={tone.sand} title="Stack Overflow" text="Stack Internal y Stack Overflow for Agents." />
+            <Card i={4} tone={tone.green} title="Higgsfield" text="Agentes que eligen modelos y levantan su propio cómputo." />
+          </div>
+        </div>
+        <Foot left="Sesiones de partners, DevDay 2026" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "plugins-demo",
+    notes: "Plugin extensions: tu producto con un hogar en la barra lateral o un panel junto a la conversación. Code review y Meetings ya están hechos con este mismo sistema. Ejemplo: un editor de diseño donde seleccionas un elemento y le pides a ChatGPT otro layout.",
+    render: (n) => (
+      <>
+        <Eyebrow>Plugin extensions</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>Tu producto, dentro de ChatGPT.</R>
+          <R i={2} as="p" className="lead">Un hogar en la barra lateral o un panel junto al chat. <strong>Code review y Meetings</strong> ya usan este sistema.</R>
+        </div>
+        <Foot left="Build Plugins for ChatGPT" right={n} />
+        <Side clip="plugin-sidebar" src="Plugin extensions" />
+      </>
+    ),
+  },
+  {
+    id: "marketplace",
+    dark: true,
+    notes: "OpenAI Marketplace: más de 30 partners al lanzar, como CodeRabbit, Notion y Vercel. Las empresas pueden usar parte de su compromiso con OpenAI para comprar tu producto.",
+    render: () => <Full clip="marketplace" title="OpenAI Marketplace." sub="30+ partners al lanzar. Las empresas compran con su compromiso con OpenAI." src={KEY} />,
+  },
+];
+
+const order = [
+  "portada", "originals", "agenda", "host", "community",
+  "s-recap", "dots-stage", "dots-alf", "dots", "dots-mobile", "space-video", "space", "single-player", "three-acts", "appshots", "page-instructions", "champions",
+  "s-models", "sol", "ultrafast-stage", "ultrafast", "ultrafast-compare", "pro500", "cost-per-task", "levers",
+  "s-apis", "decisions", "decisions-demo", "decisions-more", "agents-api", "agents-harness", "ptc", "gpt-live", "aws", "more",
+  "s-codex", "features-300", "macmini", "cloud-stage", "cloud", "cloud-demo", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo", "security", "grafana",
+  "s-eco", "openclaw", "jellyware", "partners", "s-builders", "platform", "plugins-demo", "marketplace",
+  "try", "s-build", "rules", "cierre",
+];
+
+const byId = new Map([...all, ...more].map((s) => [s.id, s]));
+export const slides: Slide[] = order.map((id) => {
+  const s = byId.get(id);
+  if (!s) throw new Error(`missing slide ${id}`);
+  return s;
+});

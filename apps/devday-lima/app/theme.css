@@ -9,3 +9,23 @@
 .dark .mark > b { background: #0047b3; }
 .face { position: absolute; border-radius: 50%; display: grid; place-items: center; font: 500 1em/1 var(--display); color: #111; pointer-events: none; z-index: 0; }
 .dark .face.k { background: #f6f6f4 !important; color: #111; }
+
+/* media */
+.full { position: absolute; inset: 0; z-index: 0; background: #000; }
+.full video, .full img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.full::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, #0000 45%, #000c 100%); }
+.full-cap { position: absolute; left: 96px; right: 96px; bottom: 64px; z-index: 2; color: #f6f6f4; display: flex; flex-direction: column; gap: 14px; }
+.full-cap h2 { color: #f6f6f4; font-size: 72px; max-width: 1200px; }
+.full-cap p { font-size: 30px; color: #d8d8d4; margin: 0; max-width: 1100px; }
+.src { position: absolute; right: 24px; top: 24px; z-index: 3; padding: 8px 14px; border-radius: 999px; background: #000a; color: #f6f6f4; font: 500 16px/1 var(--text); letter-spacing: .03em; backdrop-filter: blur(6px); }
+.side { position: absolute; right: 70px; top: 150px; width: 780px; border-radius: 10px; overflow: hidden; z-index: 1; background: #000; box-shadow: 0 40px 80px -30px #0007, 0 0 0 1px #1111; }
+.side video, .side img { width: 100%; display: block; }
+.side .src { top: auto; bottom: 12px; right: 12px; }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.duo.three { grid-template-columns: 1fr 1fr 1fr; }
+.duo figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.duo .frame { border-radius: 8px; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
+.duo video, .duo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.duo figcaption { font-size: 24px; color: var(--muted); }
+.duo figcaption b { color: var(--ink); font-weight: 500; }
+.half { max-width: 640px; }
