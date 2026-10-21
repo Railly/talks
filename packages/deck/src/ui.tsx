@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import type { CSSProperties, ReactNode } from "react";
 import { EASE, Line, R } from "./motion";
 
-export type Slide = { id: string; dark?: boolean; notes: string; speaker?: string; render: (n: string) => ReactNode };
+export type Slide = { id: string; dark?: boolean; className?: string; notes: string; speaker?: string; render: (n: string) => ReactNode };
 
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (

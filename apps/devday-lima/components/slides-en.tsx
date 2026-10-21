@@ -953,6 +953,8 @@ const more: Slide[] = [
   },
   {
     id: "crafter",
+    dark: true,
+    className: "crafter",
     notes: "Crafter Station: a nonprofit building Peru's tech ecosystem. 6,500+ GitHub stars across 214 open source repos; Petdex alone has 4,200+. The hack0 Luma calendar has about 10k LATAM subscribers. The 2025 v0 hackathon had 220+ registered across Lima, Medellin, Bogota and Arequipa. Edward and Carlos are co-founders.",
     render: (n) => (
       <>
@@ -975,6 +977,8 @@ const more: Slide[] = [
   },
   {
     id: "crafter-join",
+    dark: true,
+    className: "crafter",
     notes: "How to join today. The WhatsApp community: crafters.chat. Bounties: numbered challenges with real prizes; the first one gave away AI Frontier Conf tickets. Hot Reload, our meetup in Lima. And everything we do is open source. What you build tonight can be your first bounty.",
     render: (n) => (
       <>

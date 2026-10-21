@@ -953,6 +953,8 @@ const more: Slide[] = [
   },
   {
     id: "crafter",
+    dark: true,
+    className: "crafter",
     notes: "Crafter Station: nonprofit que construye el ecosistema tech del Perú. Más de 6.500 estrellas en GitHub entre 214 repos open source; Petdex solo tiene más de 4.200. El calendario de hack0 en Luma tiene unos 10 mil suscriptores en LATAM. El hackathon de v0 en 2025 tuvo 220+ inscritos en Lima, Medellín, Bogotá y Arequipa. Edward y Carlos son cofundadores.",
     render: (n) => (
       <>
@@ -975,6 +977,8 @@ const more: Slide[] = [
   },
   {
     id: "crafter-join",
+    dark: true,
+    className: "crafter",
     notes: "Cómo sumarse desde hoy. La comunidad en WhatsApp: crafters.chat. Bounties: retos numerados con premios reales; el primero regaló entradas a AI Frontier Conf. Hot Reload, nuestro meetup en Lima. Y todo lo que hacemos es open source. Lo que construyan esta noche puede ser su primer bounty.",
     render: (n) => (
       <>

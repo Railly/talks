@@ -29,7 +29,8 @@
 .duo figcaption { font-size: 24px; color: var(--muted); }
 .duo figcaption b { color: var(--ink); font-weight: 500; }
 .half { max-width: 640px; }
-@font-face { font-family: "Crafter Sans Text"; src: url("/shared/CrafterSansTextPreview-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
-.cs-wordmark { display: flex; align-items: center; gap: 36px; }
-.cs-wordmark img { width: 190px; height: 190px; display: block; }
-.cs-wordmark span { font: 700 104px/0.95 "Crafter Sans Text", sans-serif; letter-spacing: 0.04em; color: var(--ink); }
+.slide.crafter { background: radial-gradient(60% 70% at 85% 30%, #f8e9a41f, transparent 70%), var(--canvas); }
+.slide.crafter strong { color: #f8e9a4; font-weight: inherit; }
+.cs-wordmark { display: flex; align-items: center; gap: 40px; }
+.cs-wordmark img { width: 200px; height: 200px; display: block; }
+.cs-wordmark span { font: 500 120px/0.95 var(--display); letter-spacing: -0.035em; color: var(--ink); }

@@ -57,7 +57,7 @@ export function Deck({ slides }: { slides: Slide[] }) {
           <AnimatePresence initial={false} custom={dir} mode="popLayout">
             <motion.section
               key={slide.id}
-              className={`slide${slide.dark ? " dark" : ""}`}
+              className={`slide${slide.dark ? " dark" : ""}${slide.className ? ` ${slide.className}` : ""}`}
               custom={dir}
               variants={{
                 enter: (d: number) => ({ opacity: 0, x: d * 60, filter: "blur(6px)" }),
