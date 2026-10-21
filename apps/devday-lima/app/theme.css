@@ -59,6 +59,9 @@
 .qr b { font: 500 34px/1 var(--display); color: var(--ink); letter-spacing: -0.03em; }
 .qr-sm { top: 170px; }
 .qr-sm img { width: 340px; height: 340px; }
-.slide::after { content: "link.crafter.run"; position: absolute; left: 50%; bottom: 56px; transform: translateX(-50%); font: 400 20px/1 var(--text); color: var(--muted); opacity: .7; z-index: 3; pointer-events: none; }
-.slide:has(.full)::after { color: #f3f3e9; text-shadow: 0 1px 8px #0009; }
-.slide:has(.qr)::after { content: none; }
+.slide .foot { gap: 40px; }
+.slide .foot > span:first-child { flex: 1; min-width: 0; }
+.slide .foot > span:last-child { display: flex; align-items: center; gap: 32px; white-space: nowrap; }
+.slide .foot > span:last-child::before { content: "link.crafter.run"; opacity: .75; }
+.slide:has(.qr) .foot > span:last-child::before { content: none; }
+.slide:has(.full)::after { content: "link.crafter.run"; position: absolute; right: 24px; bottom: 24px; z-index: 3; padding: 8px 14px; border-radius: 999px; background: #000a; color: #f6f6f4; font: 500 16px/1 var(--text); letter-spacing: .03em; backdrop-filter: blur(6px); }
