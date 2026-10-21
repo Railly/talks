@@ -379,15 +379,20 @@ const all: Slide[] = [
     render: (n) => (
       <>
         <Eyebrow>How it works</Eyebrow>
-        <div className="body">
+        <div className="body" style={{ maxWidth: 940 }}>
           <R as="h2" i={1}>A small idea. A demo that works.</R>
-          <div className="cards" style={{ ["--n" as string]: 4 }}>
+          <div className="cards" style={{ ["--n" as string]: 2 }}>
             <Card i={2} tone={tone.blue} num="01" title="Pick" text="Something you can show today." />
             <Card i={3} tone={tone.green} num="02" title="Direct" text="Codex executes. You define and review." />
             <Card i={4} tone={tone.lilac} num="03" title="Verify" text="Make sure it works, not that it says so." />
             <Card i={5} tone={tone.sand} num="04" title="Show" text="Two minutes at the end." />
           </div>
         </div>
+        <R i={6} className="qr qr-sm">
+          {/* biome-ignore lint/performance/noImgElement: static QR */}
+          <img src="/img/link-qr.svg" alt="QR link.crafter.run" />
+          <span>Every Crafter link<b>link.crafter.run</b></span>
+        </R>
         <Foot left="Stuck? Raise your hand and a facilitator will help" right={n} />
       </>
     ),
@@ -980,15 +985,20 @@ const more: Slide[] = [
     render: (n) => (
       <>
         <Eyebrow>Join us</Eyebrow>
-        <div className="body">
+        <div className="body" style={{ maxWidth: 940 }}>
           <R as="h2" i={1}>What you build tonight doesn't stay here.</R>
-          <div className="cards" style={{ ["--n" as string]: 4 }}>
+          <div className="cards" style={{ ["--n" as string]: 2 }}>
             <Card i={2} tone={tone.blue} title="Community" text="1,000+ builders at crafters.chat." />
             <Card i={3} tone={tone.green} title="Bounties" text="Challenges with real prizes at crafter.run/bounties." />
             <Card i={4} tone={tone.lilac} title="Hot Reload" text="Our builder meetup in Lima." />
             <Card i={5} tone={tone.sand} title="Open source" text="All of it on GitHub: crafter-station." />
           </div>
         </div>
+        <R i={6} className="qr qr-sm">
+          {/* biome-ignore lint/performance/noImgElement: static QR */}
+          <img src="/img/link-qr.svg" alt="QR link.crafter.run" />
+          <span>Every Crafter link<b>link.crafter.run</b></span>
+        </R>
         <Foot left="Your project tonight can be your first bounty" right={n} />
       </>
     ),
