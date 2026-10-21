@@ -1057,16 +1057,27 @@ const more: Slide[] = [
     id: "mk-hero",
     dark: true,
     className: "mk",
-    notes: "Makeables, otro proyecto de Crafter. Make the merch, let your agent sweat it. Stickers, badges, tarjetas y kits para tu evento o tu marca. Tú y tu agente de código los diseñan juntos, y salen listos para la imprenta o el Wallet del iPhone.",
+    notes: "Makeables es un producto de Crafter Station. Make the merch, let your agent sweat it: stickers, badges, tarjetas y kits que tú y tu agente diseñan juntos, listos para la imprenta o el iPhone Wallet. Con un link de Luma sale un kit entero.",
+    render: () => <Full clip="/img/makeables/home.jpg" title="Makeables, un producto de Crafter." sub="Stickers, badges y tarjetas que diseñas con tu agente. De un link de Luma, un kit entero." src="makeables.dev" />,
+  },
+  {
+    id: "mk-stickers",
+    dark: true,
+    className: "mk",
+    notes: "Estos son los stickers que repartimos hoy, todos hechos en makeables.dev con el agente: los de la comunidad y los de Makeables. Búsquenlos en la mesa.",
     render: (n) => (
       <>
-        <span className="mk-eyebrow">(00) // STICKERS · BADGES · CARDS · KITS</span>
-        <div className="body half">
-          <R as="h2" i={1}>Make the merch.<br /><span className="mk-dim">Let your agent sweat it.</span></R>
-          <R i={2} as="p" className="lead">Stickers, badges y tarjetas para tu evento o tu marca. Tú y tu agente los diseñan juntos, y salen listos para la imprenta o el <strong>iPhone Wallet</strong>.</R>
+        <span className="mk-eyebrow">(01) // HECHOS EN MAKEABLES.DEV</span>
+        <div className="body">
+          <R as="h2" i={1}>Los stickers que repartimos <strong>hoy</strong>.</R>
+          <R i={2} className="mk-shots">
+            {/* biome-ignore lint/performance/noImgElement: static screenshots */}
+            <img src="/img/makeables/stickers-1.jpg" alt="" />
+            {/* biome-ignore lint/performance/noImgElement: static screenshots */}
+            <img src="/img/makeables/stickers-2.jpg" alt="" />
+          </R>
         </div>
-        <Foot left="makeables.dev" right={n} />
-        <Side clip="/img/makeables/canvas.jpg" src="makeables.dev" />
+        <Foot left="Todos diseñados con el agente en makeables.dev" right={n} />
       </>
     ),
   },
@@ -1095,19 +1106,16 @@ const more: Slide[] = [
     id: "mk-vision",
     dark: true,
     className: "mk",
-    notes: "Hacia dónde vamos: Crafter quiere ser una empresa de hardware. Empezamos por lo que ya se imprime: merch, stickers, badges. El siguiente paso son objetos vivos: letreros e-ink y badges programables que salen de la misma marca. Y el horizonte: hardware hecho por agentes. Lo vivo todavía no existe; es lo que viene.",
+    notes: "Hacia dónde vamos: Crafter quiere ser una empresa de hardware, empezando por lo que ya se imprime. Lo siguiente son objetos vivos. En makeables.dev/play ya le pides un juego al chat, el agente lo escribe en TypeScript y corre en un badge, igual byte a byte que en un chip emulado. El badge físico lo traemos al próximo evento.",
     render: (n) => (
       <>
         <span className="mk-eyebrow">(02) // HACIA DÓNDE VAMOS</span>
-        <div className="body">
+        <div className="body" style={{ maxWidth: 600 }}>
           <R as="h2" i={1}>Del merch al <strong>hardware</strong>.</R>
-          <div className="cards">
-            <Card i={2} num="HOY" title="Imprimibles" text="Stickers, badges, tarjetas y kits." />
-            <Card i={3} num="SIGUIENTE" title="Objetos vivos" text="Letreros e-ink y badges programables." />
-            <Card i={4} num="HORIZONTE" title="Hardware por agentes" text="Del prompt al objeto físico." />
-          </div>
+          <R i={2} as="p" className="lead">Hoy imprimibles. Mañana objetos vivos. En <strong>makeables.dev/play</strong> ya vibecodeas un juego que corre en un badge.</R>
         </div>
-        <Foot left="Empezamos por lo que ya se imprime" right={n} />
+        <Foot left="El badge físico llega al próximo evento" right={n} />
+        <Side clip="/img/makeables/play.jpg" src="makeables.dev/play" style={{ width: 820, top: 200 }} />
       </>
     ),
   },
@@ -1152,10 +1160,10 @@ const more: Slide[] = [
 ];
 
 const blocks: [string, string[]][] = [
-  ["Railly", ["portada", "originals", "host", "crafter", "crafter-universe", "crafter-oss", "crafter-logros", "crafter-join"]],
+  ["Railly", ["portada", "originals", "host", "crafter", "crafter-universe", "crafter-oss", "crafter-logros", "mk-hero", "mk-stickers", "mk-vision", "crafter-join"]],
   ["Edward", ["host-edward", "s-recap", "dots-alf", "dots", "appshots", "platform", "plugins-demo", "mcp-events"]],
   ["Carlos", ["host-carlos", "sol", "ultrafast-stage", "ultrafast", "levers", "decisions-demo", "agents-api", "ptc", "gpt-live"]],
-  ["Railly", ["s-codex", "macmini", "cloud", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo", "mk-hero", "mk-how", "mk-vision", "mk-play", "dotframe", "try", "s-build", "rules", "cierre"]],
+  ["Railly", ["s-codex", "macmini", "cloud", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo", "try", "s-build", "rules", "cierre"]],
 ];
 
 const byId = new Map([...all, ...more].map((s) => [s.id, s]));
