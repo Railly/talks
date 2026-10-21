@@ -955,7 +955,7 @@ const more: Slide[] = [
     id: "crafter",
     dark: true,
     className: "crafter",
-    notes: "Crafter Station: nonprofit que construye el ecosistema tech del Perú. Más de 6.500 estrellas en GitHub entre 214 repos open source; Petdex solo tiene más de 4.200. El calendario de hack0 en Luma tiene unos 10 mil suscriptores en LATAM. El hackathon de v0 en 2025 tuvo 220+ inscritos en Lima, Medellín, Bogotá y Arequipa. Edward y Carlos son cofundadores.",
+    notes: "Crafter Station: nonprofit que construye el ecosistema tech del Perú. Craft. Ship. Repeat. Una comunidad para convertir la curiosidad en proyectos. Edward y Carlos son cofundadores.",
     render: (n) => (
       <>
         <div className="body">
@@ -963,13 +963,7 @@ const more: Slide[] = [
             {/* biome-ignore lint/performance/noImgElement: static mark */}
             <div className="cs-wordmark"><img src="/shared/crafter-mark.svg" alt="" /><span>crafter<br />station</span></div>
           </R>
-          <R as="p" i={2} className="lead">Construimos el ecosistema tech del <strong>Perú</strong>.</R>
-          <div className="stats">
-            <Stat i={3} value="6.500+" label="estrellas en GitHub, todo open source" />
-            <Stat i={4} value="4.200+" label="estrellas solo en Petdex" />
-            <Stat i={5} value="10K" label="suscriptores en LATAM al calendario de hack0" />
-            <Stat i={6} value="4 ciudades" label="hackathon de v0, con 220+ inscritos" />
-          </div>
+          <R as="p" i={2} className="lead">Craft. Ship. <strong>Repeat.</strong> Una comunidad para convertir la curiosidad en proyectos, desde el Perú.</R>
         </div>
         <Foot left="Nonprofit · crafter.run" right={n} />
       </>
@@ -996,13 +990,172 @@ const more: Slide[] = [
       </>
     ),
   },
+  {
+    id: "crafter-universe",
+    dark: true,
+    className: "crafter",
+    notes: "El universo Crafter: una misma chispa, cuatro direcciones. Research para seguir buenas preguntas sobre IA y agentes. Lab para ideas que toman forma física: hardware y prototipos. Games, porque la curiosidad también juega. Y Station, la comunidad: encuentros y ships. Todo en crafter.run/universe.",
+    render: (n) => (
+      <>
+        <Eyebrow>Universo Crafter</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>Una misma chispa. Cuatro direcciones.</R>
+          <div className="cards" style={{ ["--n" as string]: 4 }}>
+            <Card i={2} num="01" title="Research" text="Preguntas abiertas sobre IA, agentes e ingeniería." />
+            <Card i={3} num="02" title="Lab" text="Hardware, fabricación y prototipos." />
+            <Card i={4} num="03" title="Games" text="Mundos y mecánicas por descubrir." />
+            <Card i={5} num="04" title="Station" text="La comunidad: encuentros y ships." />
+          </div>
+        </div>
+        <Foot left="crafter.run/universe" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "crafter-oss",
+    dark: true,
+    className: "crafter",
+    notes: "Todo lo que hacemos es open source: 214 repos públicos y más de 6.500 estrellas en GitHub. Petdex es el más grande, con más de 4.200. Elements, componentes full-stack de shadcn. text0, autocompletado personal. Y skills para agentes. Se pueden forkear y contribuir hoy.",
+    render: (n) => (
+      <>
+        <Eyebrow>Código abierto</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>214 repos. <strong>6.500+</strong> estrellas.</R>
+          <div className="cards" style={{ ["--n" as string]: 4 }}>
+            <Card i={2} num="4.2K ★" title="Petdex" text="El más grande de la org." />
+            <Card i={3} num="526 ★" title="elements" text="Bloques full-stack de shadcn/ui." />
+            <Card i={4} num="454 ★" title="text0" text="Autocompletado personal." />
+            <Card i={5} num="112 ★" title="skills" text="Skills para agentes." />
+          </div>
+        </div>
+        <Foot left="github.com/crafter-station · forkea y contribuye" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "crafter-logros",
+    dark: true,
+    className: "crafter",
+    notes: "Lo que hicimos: más de 1.000 builders en la comunidad. El calendario de hack0 en Luma ya pasa los 20 mil suscriptores en LATAM. El hackathon de v0 en 2025 tuvo 220+ inscritos en Lima, Medellín, Bogotá y Arequipa. Y peru.ai-hackathon, el hackathon de IA más grande del Perú en 2025.",
+    render: (n) => (
+      <>
+        <Eyebrow>Lo que hicimos</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>Eventos que juntan a los que construyen.</R>
+          <div className="stats">
+            <Stat i={3} value="1.000+" label="builders en la comunidad" />
+            <Stat i={4} value="20K" label="suscriptores en LATAM al calendario de hack0" />
+            <Stat i={5} value="4 ciudades" label="hackathon de v0, con 220+ inscritos" />
+            <Stat i={6} value="peru.ai" label="el hackathon de IA más grande del Perú, 2025" />
+          </div>
+        </div>
+        <Foot left="Hot Reload · Bounties · DevDay Lima" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "mk-hero",
+    dark: true,
+    className: "mk",
+    notes: "Makeables, otro proyecto de Crafter. Make the merch, let your agent sweat it. Stickers, badges, tarjetas y kits para tu evento o tu marca. Tú y tu agente de código los diseñan juntos, y salen listos para la imprenta o el Wallet del iPhone.",
+    render: (n) => (
+      <>
+        <span className="mk-eyebrow">(00) // STICKERS · BADGES · CARDS · KITS</span>
+        <div className="body half">
+          <R as="h2" i={1}>Make the merch.<br /><span className="mk-dim">Let your agent sweat it.</span></R>
+          <R i={2} as="p" className="lead">Stickers, badges y tarjetas para tu evento o tu marca. Tú y tu agente los diseñan juntos, y salen listos para la imprenta o el <strong>iPhone Wallet</strong>.</R>
+        </div>
+        <Foot left="makeables.dev" right={n} />
+        <Side clip="/img/makeables/canvas.jpg" src="makeables.dev" />
+      </>
+    ),
+  },
+  {
+    id: "mk-how",
+    dark: true,
+    className: "mk",
+    notes: "Cómo funciona: le pasas un link de Luma o Eventbrite, tu web o tus archivos. Sale un kit entero: plancha de stickers con kiss-cut lista para la imprenta, badges y tarjetas con frente y reverso, y la tarjeta del Wallet que instala tu agente. Funciona con Claude Code, Codex, Cursor o cualquier cliente MCP. Cada edición del agente es una versión que apruebas o rechazas.",
+    render: (n) => (
+      <>
+        <span className="mk-eyebrow">(01) // CÓMO FUNCIONA</span>
+        <div className="body">
+          <R as="h2" i={1}>Pega un link. Sale un kit entero.</R>
+          <div className="cards" style={{ ["--n" as string]: 4 }}>
+            <Card i={2} num="IN // EVENTO" title="Un link de Luma" text="Nombre, fecha y lugar." />
+            <Card i={3} num="OUT // IMPRENTA" title="Plancha de stickers" text="PDF con kiss-cut, listo." />
+            <Card i={4} num="OUT // PERSONAS" title="Badges y tarjetas" text="Frente y reverso." />
+            <Card i={5} num="CON // TU AGENTE" title="Vía MCP" text="Claude Code, Codex, Cursor." />
+          </div>
+        </div>
+        <Foot left="Cada edición del agente es una versión que apruebas o rechazas" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "mk-vision",
+    dark: true,
+    className: "mk",
+    notes: "Hacia dónde vamos: Crafter quiere ser una empresa de hardware. Empezamos por lo que ya se imprime: merch, stickers, badges. El siguiente paso son objetos vivos: letreros e-ink y badges programables que salen de la misma marca. Y el horizonte: hardware hecho por agentes. Lo vivo todavía no existe; es lo que viene.",
+    render: (n) => (
+      <>
+        <span className="mk-eyebrow">(02) // HACIA DÓNDE VAMOS</span>
+        <div className="body">
+          <R as="h2" i={1}>Del merch al <strong>hardware</strong>.</R>
+          <div className="cards">
+            <Card i={2} num="HOY" title="Imprimibles" text="Stickers, badges, tarjetas y kits." />
+            <Card i={3} num="SIGUIENTE" title="Objetos vivos" text="Letreros e-ink y badges programables." />
+            <Card i={4} num="HORIZONTE" title="Hardware por agentes" text="Del prompt al objeto físico." />
+          </div>
+        </div>
+        <Foot left="Empezamos por lo que ya se imprime" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "mk-play",
+    dark: true,
+    className: "mk",
+    notes: "makeables.dev/play: le pides un juego en el chat, el agente lo escribe en TypeScript, lo compila y lo juega en un badge. Así se hizo este Pong. Ese mismo TypeScript compila a código nativo con scriptc y corre en un chip ARM emulado, con la misma imagen byte a byte que en el browser. El badge físico es lo que traemos al próximo evento.",
+    render: (n) => (
+      <>
+        <span className="mk-eyebrow">(03) // MAKEABLES.DEV/PLAY</span>
+        <div className="body half">
+          <R as="h2" i={1}>Vibecodea un juego. Corre en un badge.</R>
+          <R i={2} as="p" className="lead">Pides un juego en el chat, el agente lo escribe en TypeScript y lo juega. El mismo código compila a nativo y corre en un chip, <strong>igual byte a byte</strong>.</R>
+        </div>
+        <Foot left="El badge físico llega al próximo evento" right={n} />
+        <Side clip="/img/makeables/play.jpg" src="makeables.dev/play" />
+      </>
+    ),
+  },
+  {
+    id: "dotframe",
+    dark: true,
+    className: "mk",
+    notes: "dotframe, nuestro motor de juegos en TypeScript: una sola base de código para web, Discord, iOS y binarios nativos. Es determinista, así que el agente puede jugar sin pantalla y revisar frames. Con scriptc, de Vercel Labs, el TypeScript compila a nativo; en emulación ya corre en un Cortex-M33 con unos 61 KB de flash, lo que cabe en un RP2350 de unos 8 dólares. Falta probarlo en el chip físico.",
+    render: (n) => (
+      <>
+        <span className="mk-eyebrow">(04) // DOTFRAME</span>
+        <div className="body">
+          <R as="h2" i={1}>Un TypeScript. Todos los targets.</R>
+          <div className="cards" style={{ ["--n" as string]: 4 }}>
+            <Card i={2} num="WEB" title="Web y Discord" text="Un mismo juego, con netplay." />
+            <Card i={3} num="MÓVIL" title="iOS" text="Build e instalación en el iPhone." />
+            <Card i={4} num="NATIVO" title="scriptc" text="TS a binario nativo, sin runtime JS." />
+            <Card i={5} num="CHIP" title="Cortex-M33" text="~61 KB de flash, en emulación." />
+          </div>
+        </div>
+        <Foot left="npm i -g dotframe · el chip físico es el siguiente paso" right={n} />
+      </>
+    ),
+  },
 ];
 
 const blocks: [string, string[]][] = [
-  ["Railly", ["portada", "originals", "agenda", "host", "crafter", "crafter-join", "community"]],
-  ["Edward", ["host-edward", "s-recap", "dots-stage", "dots", "appshots", "s-builders", "platform", "plugins-demo", "plugin-creator", "mcp-events", "openclaw"]],
-  ["Carlos", ["host-carlos", "s-models", "sol", "ultrafast-stage", "ultrafast", "levers", "s-apis", "decisions", "decisions-demo", "agents-api", "ptc", "gpt-live"]],
-  ["Railly", ["s-codex", "features-300", "macmini", "cloud-stage", "cloud", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo", "try", "s-build", "rules", "cierre"]],
+  ["Railly", ["portada", "originals", "host", "crafter", "crafter-universe", "crafter-oss", "crafter-logros", "crafter-join"]],
+  ["Edward", ["host-edward", "s-recap", "dots-alf", "dots", "appshots", "platform", "plugins-demo", "mcp-events"]],
+  ["Carlos", ["host-carlos", "sol", "ultrafast-stage", "ultrafast", "levers", "decisions-demo", "agents-api", "ptc", "gpt-live"]],
+  ["Railly", ["s-codex", "macmini", "cloud", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo", "mk-hero", "mk-how", "mk-vision", "mk-play", "dotframe", "try", "s-build", "rules", "cierre"]],
 ];
 
 const byId = new Map([...all, ...more].map((s) => [s.id, s]));
