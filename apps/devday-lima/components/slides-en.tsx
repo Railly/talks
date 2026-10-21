@@ -395,21 +395,24 @@ const all: Slide[] = [
   {
     id: "cierre",
     dark: true,
-    notes: "Close: all announcements are at openai.com/index/devday-2026-recap; guides at developers.openai.com and learn.chatgpt.com. Join Crafter Station at crafters.chat. To talk with me, railly.dev/meet. This deck was also built by agents and it's open source.",
+    notes: "Close: all announcements are at openai.com/index/devday-2026-recap; guides at developers.openai.com and learn.chatgpt.com. Join Crafter Station at crafters.chat. To talk with me, railly.dev/meet. This deck was also built by agents and it's open source. Close on the QR: link.crafter.run has every Crafter link, the community and each crafter.",
     render: (n) => (
       <>
-        <Faces faces={CORNER} delay={0.3} />
         <Eyebrow>Thank you</Eyebrow>
-        <div className="body">
+        <div className="body" style={{ maxWidth: 940 }}>
           <h2><Words text="Keep building." /></h2>
           <R i={4} className="links" >
-            <div><small>All announcements</small><span style={{ fontSize: 40 }}>openai.com/index/devday-2026-recap</span></div>
-            <div><small>The community</small><span style={{ fontSize: 40 }}>crafters.chat</span></div>
-            <div><small>Let's talk</small><span style={{ fontSize: 40 }}>railly.dev/meet</span></div>
+            <div><small>All announcements</small><span style={{ fontSize: 32 }}>openai.com/index/devday-2026-recap</span></div>
+            <div><small>Let's talk</small><span style={{ fontSize: 32 }}>railly.dev/meet</span></div>
           </R>
           <R i={5} as="p" className="lead">Guides: <strong>developers.openai.com</strong> · <strong>learn.chatgpt.com</strong></R>
           <R i={6} as="p" className="lead">This deck was built by agents. Code: <strong>github.com/Railly/talks</strong></R>
         </div>
+        <R i={5} className="qr">
+          {/* biome-ignore lint/performance/noImgElement: static QR */}
+          <img src="/img/link-qr.svg" alt="QR link.crafter.run" />
+          <span>Every Crafter link<b>link.crafter.run</b></span>
+        </R>
         <Foot left="DevDay Exchange Community: Lima" right={n} />
       </>
     ),

@@ -53,3 +53,7 @@
 .slide.crafter .card.cs-games { background: #e6def1; color: #554168; }
 .slide.crafter .card.cs-station { background: #f0e7bf; color: #554b27; }
 .slide.crafter .card[class*="cs-"] .num { color: inherit; opacity: .7; }
+.qr { position: absolute; right: 110px; top: 150px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.qr img { width: 400px; height: 400px; border-radius: 16px; display: block; }
+.qr span { display: flex; flex-direction: column; align-items: center; gap: 4px; font: 400 22px/1.2 var(--text); color: var(--muted); }
+.qr b { font: 500 34px/1 var(--display); color: var(--ink); letter-spacing: -0.03em; }
