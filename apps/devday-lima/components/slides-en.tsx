@@ -1,5 +1,6 @@
 "use client";
 
+import { CreditsLive } from "@/components/credits";
 import { Card, EASE, Eyebrow, Foot, Mark, R, type Slide, tone, Words } from "@talks/deck";
 import { motion } from "motion/react";
 import { CORNER, COVER, Faces } from "./faces";
@@ -372,6 +373,25 @@ const all: Slide[] = [
     dark: true,
     notes: "Time to build. First a live Codex demo, then it's your turn.",
     render: (n) => <Section k="Build session" title="You can just ship things." sub="A live demo, then you build." n={n} />,
+  },
+  {
+    id: "credits",
+    notes: "After the demo. Open the window from crafter.run/admin; the code shows here. Close and hand out once everyone confirmed.",
+    render: (n) => (
+      <>
+        <Eyebrow>Credits</Eyebrow>
+        <div className="body" style={{ maxWidth: 940 }}>
+          <R as="h2" i={1}>Your Codex credits.</R>
+          <R i={2}><CreditsLive t={{ checkIn: "Scan and check in with your Luma email. Not registered? Join the waitlist.", open: "Enter this code on the page to confirm you are here.", closed: "Credits are out. Reload the page to see your code.", winners: "Waitlist with credits:", present: "confirmed", checkedIn: "checked in.", noScreen: "Scan and check in with your Luma email." }} /></R>
+        </div>
+        <R i={3} className="qr qr-sm">
+          {/* biome-ignore lint/performance/noImgElement: static QR */}
+          <img src="/img/credits-qr.svg" alt="QR crafter.run credits" />
+          <span>Check-in<b>crafter.run</b></span>
+        </R>
+        <Foot left="No code on screen, no credit" right={n} />
+      </>
+    ),
   },
   {
     id: "rules",
@@ -1176,7 +1196,7 @@ const blocks: [string, string[]][] = [
   ["Railly", ["portada", "originals", "host", "crafter", "crafter-universe", "crafter-oss", "crafter-logros", "mk-hero", "mk-stickers", "mk-vision", "crafter-join"]],
   ["Edward", ["host-edward", "s-recap", "dots-alf", "dots", "appshots", "platform", "plugins-demo", "mcp-events"]],
   ["Carlos", ["host-carlos", "sol", "ultrafast-stage", "ultrafast", "levers", "decisions-demo", "agents-api", "ptc", "gpt-live"]],
-  ["Railly", ["s-codex", "macmini", "cloud", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo", "try", "s-build", "rules", "cierre"]],
+  ["Railly", ["s-codex", "macmini", "cloud", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo", "try", "s-build", "credits", "rules", "cierre"]],
 ];
 
 const byId = new Map([...all, ...more].map((s) => [s.id, s]));
