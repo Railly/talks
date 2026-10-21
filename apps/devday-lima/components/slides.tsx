@@ -1001,10 +1001,10 @@ const more: Slide[] = [
         <div className="body">
           <R as="h2" i={1}>Una misma chispa. Cuatro direcciones.</R>
           <div className="cards" style={{ ["--n" as string]: 4 }}>
-            <Card i={2} num="01" title="Research" text="Preguntas abiertas sobre IA, agentes e ingeniería." />
-            <Card i={3} num="02" title="Lab" text="Hardware, fabricación y prototipos." />
-            <Card i={4} num="03" title="Games" text="Mundos y mecánicas por descubrir." />
-            <Card i={5} num="04" title="Station" text="La comunidad: encuentros y ships." />
+            <Card i={2} tone="cs-research" num="01" title="Research" text="Preguntas abiertas sobre IA, agentes e ingeniería." />
+            <Card i={3} tone="cs-lab" num="02" title="Lab" text="Hardware, fabricación y prototipos." />
+            <Card i={4} tone="cs-games" num="03" title="Games" text="Mundos y mecánicas por descubrir." />
+            <Card i={5} tone="cs-station" num="04" title="Station" text="La comunidad: encuentros y ships." />
           </div>
         </div>
         <Foot left="crafter.run/universe" right={n} />

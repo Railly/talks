@@ -48,3 +48,8 @@
 .mk-shots { display: flex; gap: 24px; align-items: flex-start; margin-top: 8px; }
 .mk-shots img { height: 440px; width: auto; border-radius: 12px; display: block; box-shadow: 0 0 0 1px #2c2b27; }
 .slide.mk .full-cap h2 { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800; letter-spacing: -0.045em; }
+.slide.crafter .card.cs-research { background: #dce6c9; color: #304a32; }
+.slide.crafter .card.cs-lab { background: #dce7ed; color: #324c60; }
+.slide.crafter .card.cs-games { background: #e6def1; color: #554168; }
+.slide.crafter .card.cs-station { background: #f0e7bf; color: #554b27; }
+.slide.crafter .card[class*="cs-"] .num { color: inherit; opacity: .7; }

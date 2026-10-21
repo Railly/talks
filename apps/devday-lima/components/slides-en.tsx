@@ -1001,10 +1001,10 @@ const more: Slide[] = [
         <div className="body">
           <R as="h2" i={1}>One spark. Four directions.</R>
           <div className="cards" style={{ ["--n" as string]: 4 }}>
-            <Card i={2} num="01" title="Research" text="Open questions on AI, agents and engineering." />
-            <Card i={3} num="02" title="Lab" text="Hardware, fabrication and prototypes." />
-            <Card i={4} num="03" title="Games" text="Worlds and mechanics to discover." />
-            <Card i={5} num="04" title="Station" text="The community: meetups and ships." />
+            <Card i={2} tone="cs-research" num="01" title="Research" text="Open questions on AI, agents and engineering." />
+            <Card i={3} tone="cs-lab" num="02" title="Lab" text="Hardware, fabrication and prototypes." />
+            <Card i={4} tone="cs-games" num="03" title="Games" text="Worlds and mechanics to discover." />
+            <Card i={5} tone="cs-station" num="04" title="Station" text="The community: meetups and ships." />
           </div>
         </div>
         <Foot left="crafter.run/universe" right={n} />
