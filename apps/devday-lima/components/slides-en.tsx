@@ -14,6 +14,26 @@ function Stat({ i, value, label }: { i: number; value: string; label: string }) 
   );
 }
 
+function Host({ name, eb, stats, site, img, n }: { name: string; eb: string; stats: [string, string][]; site: string; img: string; n: string }) {
+  return (
+    <>
+      <Eyebrow>{eb}</Eyebrow>
+      <div className="body" style={{ maxWidth: 900 }}>
+        <h2><Words text={name} /></h2>
+        <div className="stats">
+          {stats.map(([v, l], k) => <Stat key={v} i={3 + k} value={v} label={l} />)}
+        </div>
+      </div>
+      <Foot left={site} right={n} />
+      <motion.div className="portrait" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: EASE, delay: 0.5 }}>
+        <div className="blob" />
+        {/* biome-ignore lint/performance/noImgElement: static cutout */}
+        <img src={img} alt={name} />
+      </motion.div>
+    </>
+  );
+}
+
 function Section({ k, title, sub, n }: { k: string; title: string; sub: string; n: string }) {
   return (
     <>
@@ -921,12 +941,22 @@ const more: Slide[] = [
       </>
     ),
   },
+  {
+    id: "host-edward",
+    notes: "Edward Ramos refines frontend products until they work in production, for real users. Frontend Engineer at Crafter Station since 2024.",
+    render: (n) => <Host name="Edward Ramos." eb="Up next" stats={[["Frontend", "Frontend Engineer at Crafter Station"], ["Production", "Features that work for real users"], ["Lima", "Lima, Peru"]]} site="edwardr.dev" img="/shared/edward.webp" n={n} />,
+  },
+  {
+    id: "host-carlos",
+    notes: "Carlos Tarmeño, Frontend Engineer at Crafter Station since 2024. He cares about craft and user experience: polished, accessible interfaces where design meets code.",
+    render: (n) => <Host name="Carlos Tarmeño." eb="Up next" stats={[["Frontend", "Frontend Engineer at Crafter Station"], ["Craft", "Polished, accessible interfaces"], ["Lima", "Lima, Peru"]]} site="carlostarmeno.com" img="/shared/tarmeno.webp" n={n} />,
+  },
 ];
 
 const blocks: [string, string[]][] = [
   ["Railly", ["portada", "originals", "agenda", "host", "community"]],
-  ["Edward", ["s-recap", "dots-stage", "dots", "appshots", "s-builders", "platform", "plugins-demo", "plugin-creator", "mcp-events", "openclaw"]],
-  ["Carlos", ["s-models", "sol", "ultrafast-stage", "ultrafast", "levers", "s-apis", "decisions", "decisions-demo", "agents-api", "ptc", "gpt-live"]],
+  ["Edward", ["host-edward", "s-recap", "dots-stage", "dots", "appshots", "s-builders", "platform", "plugins-demo", "plugin-creator", "mcp-events", "openclaw"]],
+  ["Carlos", ["host-carlos", "s-models", "sol", "ultrafast-stage", "ultrafast", "levers", "s-apis", "decisions", "decisions-demo", "agents-api", "ptc", "gpt-live"]],
   ["Railly", ["s-codex", "features-300", "macmini", "cloud-stage", "cloud", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo", "try", "s-build", "rules", "cierre"]],
 ];
 
