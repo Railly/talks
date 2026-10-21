@@ -943,27 +943,27 @@ const more: Slide[] = [
   },
   {
     id: "host-edward",
-    notes: "Edward Ramos refina productos frontend hasta que funcionan en producción, para usuarios reales. Frontend Engineer en Crafter Station desde 2024.",
-    render: (n) => <Host name="Edward Ramos." eb="Ahora les habla" stats={[["Frontend", "Frontend Engineer en Crafter Station"], ["Producción", "Features que funcionan para usuarios reales"], ["Lima", "Lima, Perú"]]} site="edwardr.dev" img="/shared/edward.webp" n={n} />,
+    notes: "Edward Ramos es Senior Frontend Developer en Atlantic City Casino & Sports y cofundador de Crafter Station. Egresado de Ingeniería de Software de la UNMSM, con más de cuatro años en la industria. Se especializa en interfaces y funcionalidades web, lidera soluciones para escenarios complejos y cuida la calidad del software en producción.",
+    render: (n) => <Host name="Edward Ramos." eb="Ahora les habla" stats={[["Senior Frontend", "en Atlantic City Casino & Sports"], ["Cofundador", "de Crafter Station"], ["4+ años", "Ingeniería de Software, UNMSM"]]} site="edwardr.dev" img="/shared/edward.webp" n={n} />,
   },
   {
     id: "host-carlos",
-    notes: "Carlos Tarmeño, Frontend Engineer en Crafter Station desde 2024. Le importan el craft y la experiencia de usuario: interfaces pulidas y accesibles, donde se cruzan diseño y código.",
-    render: (n) => <Host name="Carlos Tarmeño." eb="Ahora les habla" stats={[["Frontend", "Frontend Engineer en Crafter Station"], ["Craft", "Interfaces pulidas y accesibles"], ["Lima", "Lima, Perú"]]} site="carlostarmeno.com" img="/shared/tarmeno.webp" n={n} />,
+    notes: "Carlos Tarmeño es Frontend Developer en Kambista y cofundador de Crafter Station. Formado en Ingeniería de Software en la UNMSM, con cuatro años desarrollando apps web y móviles para fintech y sistemas empresariales. También integra herramientas de IA en el desarrollo de productos.",
+    render: (n) => <Host name="Carlos Tarmeño." eb="Ahora les habla" stats={[["Frontend", "en Kambista, fintech"], ["Cofundador", "de Crafter Station"], ["4 años", "web, mobile e IA · UNMSM"]]} site="carlostarmeno.com" img="/shared/tarmeno.webp" n={n} />,
   },
   {
     id: "crafter",
-    notes: "Crafter Station: nonprofit que construye el ecosistema tech del Perú. Más de 1.000 builders en la comunidad, 9 crafters en 4 países. Hicimos peru.ai-hackathon y el hackathon de v0 en 2025: 118 asistentes y 66 proyectos construidos en Lima, Medellín, Bogotá y Arequipa. Edward y Carlos son parte del core team.",
+    notes: "Crafter Station: nonprofit que construye el ecosistema tech del Perú. Más de 6.500 estrellas en GitHub entre 214 repos open source; Petdex solo tiene más de 4.200. El calendario de hack0 en Luma tiene unos 10 mil suscriptores en LATAM. El hackathon de v0 en 2025 tuvo 220+ inscritos en Lima, Medellín, Bogotá y Arequipa. Edward y Carlos son cofundadores.",
     render: (n) => (
       <>
         <Eyebrow>Crafter Station</Eyebrow>
         <div className="body">
           <R as="h2" i={1}>Construimos el ecosistema tech del <Mark delay={1}>Perú</Mark>.</R>
           <div className="stats">
-            <Stat i={2} value="1.000+" label="builders en la comunidad" />
-            <Stat i={3} value="9" label="crafters en 4 países" />
-            <Stat i={4} value="66" label="proyectos en el hackathon de v0 2025" />
-            <Stat i={5} value="2025" label="peru.ai-hackathon" />
+            <Stat i={2} value="6.500+" label="estrellas en GitHub, todo open source" />
+            <Stat i={3} value="4.200+" label="estrellas solo en Petdex" />
+            <Stat i={4} value="10K" label="suscriptores en LATAM al calendario de hack0" />
+            <Stat i={5} value="4 ciudades" label="hackathon de v0, con 220+ inscritos" />
           </div>
         </div>
         <Foot left="Nonprofit · crafter.run" right={n} />

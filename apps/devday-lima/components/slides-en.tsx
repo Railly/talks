@@ -943,27 +943,27 @@ const more: Slide[] = [
   },
   {
     id: "host-edward",
-    notes: "Edward Ramos refines frontend products until they work in production, for real users. Frontend Engineer at Crafter Station since 2024.",
-    render: (n) => <Host name="Edward Ramos." eb="Up next" stats={[["Frontend", "Frontend Engineer at Crafter Station"], ["Production", "Features that work for real users"], ["Lima", "Lima, Peru"]]} site="edwardr.dev" img="/shared/edward.webp" n={n} />,
+    notes: "Edward Ramos is a Senior Frontend Developer at Atlantic City Casino & Sports and a co-founder of Crafter Station. Software Engineering graduate from UNMSM with 4+ years in tech. He specializes in web interfaces and features, leads solutions for complex scenarios and owns production quality.",
+    render: (n) => <Host name="Edward Ramos." eb="Up next" stats={[["Senior Frontend", "at Atlantic City Casino & Sports"], ["Co-founder", "of Crafter Station"], ["4+ years", "Software Engineering, UNMSM"]]} site="edwardr.dev" img="/shared/edward.webp" n={n} />,
   },
   {
     id: "host-carlos",
-    notes: "Carlos Tarmeño, Frontend Engineer at Crafter Station since 2024. He cares about craft and user experience: polished, accessible interfaces where design meets code.",
-    render: (n) => <Host name="Carlos Tarmeño." eb="Up next" stats={[["Frontend", "Frontend Engineer at Crafter Station"], ["Craft", "Polished, accessible interfaces"], ["Lima", "Lima, Peru"]]} site="carlostarmeno.com" img="/shared/tarmeno.webp" n={n} />,
+    notes: "Carlos Tarmeño is a Frontend Developer at Kambista and a co-founder of Crafter Station. Trained in Software Engineering at UNMSM, with four years building web and mobile apps for fintech and enterprise systems. He also brings AI tools into product development.",
+    render: (n) => <Host name="Carlos Tarmeño." eb="Up next" stats={[["Frontend", "at Kambista, fintech"], ["Co-founder", "of Crafter Station"], ["4 years", "web, mobile and AI · UNMSM"]]} site="carlostarmeno.com" img="/shared/tarmeno.webp" n={n} />,
   },
   {
     id: "crafter",
-    notes: "Crafter Station: a nonprofit building Peru's tech ecosystem. 1,000+ builders in the community, 9 crafters across 4 countries. We ran peru.ai-hackathon and the v0 hackathon in 2025: 118 attendees and 66 projects built across Lima, Medellin, Bogota and Arequipa. Edward and Carlos are part of the core team.",
+    notes: "Crafter Station: a nonprofit building Peru's tech ecosystem. 6,500+ GitHub stars across 214 open source repos; Petdex alone has 4,200+. The hack0 Luma calendar has about 10k LATAM subscribers. The 2025 v0 hackathon had 220+ registered across Lima, Medellin, Bogota and Arequipa. Edward and Carlos are co-founders.",
     render: (n) => (
       <>
         <Eyebrow>Crafter Station</Eyebrow>
         <div className="body">
           <R as="h2" i={1}>We build <Mark delay={1}>Peru's</Mark> tech ecosystem.</R>
           <div className="stats">
-            <Stat i={2} value="1,000+" label="builders in the community" />
-            <Stat i={3} value="9" label="crafters across 4 countries" />
-            <Stat i={4} value="66" label="projects at the 2025 v0 hackathon" />
-            <Stat i={5} value="2025" label="peru.ai-hackathon" />
+            <Stat i={2} value="6,500+" label="GitHub stars, all open source" />
+            <Stat i={3} value="4,200+" label="stars on Petdex alone" />
+            <Stat i={4} value="10K" label="LATAM subscribers to the hack0 calendar" />
+            <Stat i={5} value="4 cities" label="v0 hackathon, 220+ registered" />
           </div>
         </div>
         <Foot left="Nonprofit · crafter.run" right={n} />
