@@ -951,10 +951,48 @@ const more: Slide[] = [
     notes: "Carlos Tarmeño, Frontend Engineer at Crafter Station since 2024. He cares about craft and user experience: polished, accessible interfaces where design meets code.",
     render: (n) => <Host name="Carlos Tarmeño." eb="Up next" stats={[["Frontend", "Frontend Engineer at Crafter Station"], ["Craft", "Polished, accessible interfaces"], ["Lima", "Lima, Peru"]]} site="carlostarmeno.com" img="/shared/tarmeno.webp" n={n} />,
   },
+  {
+    id: "crafter",
+    notes: "Crafter Station: a nonprofit building Peru's tech ecosystem. 1,000+ builders in the community, 9 crafters across 4 countries. We ran peru.ai-hackathon and the v0 hackathon in 2025: 118 attendees and 66 projects built across Lima, Medellin, Bogota and Arequipa. Edward and Carlos are part of the core team.",
+    render: (n) => (
+      <>
+        <Eyebrow>Crafter Station</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>We build <Mark delay={1}>Peru's</Mark> tech ecosystem.</R>
+          <div className="stats">
+            <Stat i={2} value="1,000+" label="builders in the community" />
+            <Stat i={3} value="9" label="crafters across 4 countries" />
+            <Stat i={4} value="66" label="projects at the 2025 v0 hackathon" />
+            <Stat i={5} value="2025" label="peru.ai-hackathon" />
+          </div>
+        </div>
+        <Foot left="Nonprofit · crafter.run" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "crafter-join",
+    notes: "How to join today. The WhatsApp community: crafters.chat. Bounties: numbered challenges with real prizes; the first one gave away AI Frontier Conf tickets. Hot Reload, our meetup in Lima. And everything we do is open source. What you build tonight can be your first bounty.",
+    render: (n) => (
+      <>
+        <Eyebrow>Join us</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>What you build tonight doesn't stay here.</R>
+          <div className="cards" style={{ ["--n" as string]: 4 }}>
+            <Card i={2} tone={tone.blue} title="Community" text="1,000+ builders at crafters.chat." />
+            <Card i={3} tone={tone.green} title="Bounties" text="Challenges with real prizes at crafter.run/bounties." />
+            <Card i={4} tone={tone.lilac} title="Hot Reload" text="Our builder meetup in Lima." />
+            <Card i={5} tone={tone.sand} title="Open source" text="All of it on GitHub: crafter-station." />
+          </div>
+        </div>
+        <Foot left="Your project tonight can be your first bounty" right={n} />
+      </>
+    ),
+  },
 ];
 
 const blocks: [string, string[]][] = [
-  ["Railly", ["portada", "originals", "agenda", "host", "community"]],
+  ["Railly", ["portada", "originals", "agenda", "host", "crafter", "crafter-join", "community"]],
   ["Edward", ["host-edward", "s-recap", "dots-stage", "dots", "appshots", "s-builders", "platform", "plugins-demo", "plugin-creator", "mcp-events", "openclaw"]],
   ["Carlos", ["host-carlos", "s-models", "sol", "ultrafast-stage", "ultrafast", "levers", "s-apis", "decisions", "decisions-demo", "agents-api", "ptc", "gpt-live"]],
   ["Railly", ["s-codex", "features-300", "macmini", "cloud-stage", "cloud", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo", "try", "s-build", "rules", "cierre"]],
