@@ -956,14 +956,17 @@ const more: Slide[] = [
     notes: "Crafter Station: a nonprofit building Peru's tech ecosystem. 6,500+ GitHub stars across 214 open source repos; Petdex alone has 4,200+. The hack0 Luma calendar has about 10k LATAM subscribers. The 2025 v0 hackathon had 220+ registered across Lima, Medellin, Bogota and Arequipa. Edward and Carlos are co-founders.",
     render: (n) => (
       <>
-        <Eyebrow>Crafter Station</Eyebrow>
         <div className="body">
-          <R as="h2" i={1}>We build <Mark delay={1}>Peru's</Mark> tech ecosystem.</R>
+          <R i={1}>
+            {/* biome-ignore lint/performance/noImgElement: static mark */}
+            <div className="cs-wordmark"><img src="/shared/crafter-mark.svg" alt="" /><span>crafter<br />station</span></div>
+          </R>
+          <R as="p" i={2} className="lead">We build <strong>Peru's</strong> tech ecosystem.</R>
           <div className="stats">
-            <Stat i={2} value="6,500+" label="GitHub stars, all open source" />
-            <Stat i={3} value="4,200+" label="stars on Petdex alone" />
-            <Stat i={4} value="10K" label="LATAM subscribers to the hack0 calendar" />
-            <Stat i={5} value="4 cities" label="v0 hackathon, 220+ registered" />
+            <Stat i={3} value="6,500+" label="GitHub stars, all open source" />
+            <Stat i={4} value="4,200+" label="stars on Petdex alone" />
+            <Stat i={5} value="10K" label="LATAM subscribers to the hack0 calendar" />
+            <Stat i={6} value="4 cities" label="v0 hackathon, 220+ registered" />
           </div>
         </div>
         <Foot left="Nonprofit · crafter.run" right={n} />

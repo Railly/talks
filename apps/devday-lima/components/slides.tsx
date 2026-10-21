@@ -956,14 +956,17 @@ const more: Slide[] = [
     notes: "Crafter Station: nonprofit que construye el ecosistema tech del Perú. Más de 6.500 estrellas en GitHub entre 214 repos open source; Petdex solo tiene más de 4.200. El calendario de hack0 en Luma tiene unos 10 mil suscriptores en LATAM. El hackathon de v0 en 2025 tuvo 220+ inscritos en Lima, Medellín, Bogotá y Arequipa. Edward y Carlos son cofundadores.",
     render: (n) => (
       <>
-        <Eyebrow>Crafter Station</Eyebrow>
         <div className="body">
-          <R as="h2" i={1}>Construimos el ecosistema tech del <Mark delay={1}>Perú</Mark>.</R>
+          <R i={1}>
+            {/* biome-ignore lint/performance/noImgElement: static mark */}
+            <div className="cs-wordmark"><img src="/shared/crafter-mark.svg" alt="" /><span>crafter<br />station</span></div>
+          </R>
+          <R as="p" i={2} className="lead">Construimos el ecosistema tech del <strong>Perú</strong>.</R>
           <div className="stats">
-            <Stat i={2} value="6.500+" label="estrellas en GitHub, todo open source" />
-            <Stat i={3} value="4.200+" label="estrellas solo en Petdex" />
-            <Stat i={4} value="10K" label="suscriptores en LATAM al calendario de hack0" />
-            <Stat i={5} value="4 ciudades" label="hackathon de v0, con 220+ inscritos" />
+            <Stat i={3} value="6.500+" label="estrellas en GitHub, todo open source" />
+            <Stat i={4} value="4.200+" label="estrellas solo en Petdex" />
+            <Stat i={5} value="10K" label="suscriptores en LATAM al calendario de hack0" />
+            <Stat i={6} value="4 ciudades" label="hackathon de v0, con 220+ inscritos" />
           </div>
         </div>
         <Foot left="Nonprofit · crafter.run" right={n} />
