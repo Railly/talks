@@ -331,7 +331,7 @@ const all: Slide[] = [
   {
     id: "try",
     dark: true,
-    notes: "How Dominic closed Codex Has Left The Laptop: three things to try. One, Codex Cloud if you leave your laptop cracked open. Two, Space if you copy plans between docs and Codex. Three, give your dot a responsibility you handle by hand today.",
+    notes: "How Dominic closed Codex Has Left The Laptop: three things to try. One, Codex Cloud if you leave your laptop cracked open. Two, the Codex CLI: agent view and fork to worktree. Three, give your dot a responsibility you handle by hand today.",
     render: (n) => (
       <>
         <Eyebrow>If you take three things</Eyebrow>
@@ -339,11 +339,11 @@ const all: Slide[] = [
           <R as="h2" i={1}>Try it this week.</R>
           <div className="cards">
             <Card i={2} num="01" title="Codex Cloud" text="If you still leave your laptop cracked open so the agent keeps going." />
-            <Card i={3} num="02" title="Space" text="If you copy plans between docs and Codex." />
+            <Card i={3} num="02" title="Codex CLI" text="Agent view and fork to worktree on your next project." />
             <Card i={4} num="03" title="Your dot" text="Give it a responsibility you handle by hand today." />
           </div>
         </div>
-        <Foot left="Dominic, Developer Experience at OpenAI" right={n} />
+        <Foot left="Based on Codex Has Left The Laptop" right={n} />
       </>
     ),
   },
@@ -925,11 +925,9 @@ const more: Slide[] = [
 
 const order = [
   "portada", "originals", "agenda", "host", "community",
-  "s-recap", "dots-stage", "dots-alf", "dots", "dots-mobile", "space-video", "space", "single-player", "three-acts", "appshots", "page-instructions", "pages", "team-work", "champions",
-  "s-models", "sol", "ultrafast-stage", "ultrafast", "ultrafast-compare", "pro500", "cost-per-task", "levers",
-  "s-apis", "decisions", "decisions-demo", "decisions-more", "agents-api", "agents-harness", "ptc", "gpt-live", "aws", "more", "private",
-  "s-codex", "features-300", "macmini", "cloud-stage", "cloud", "cloud-demo", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo", "security", "grafana",
-  "s-eco", "openclaw", "jellyware", "partners", "s-builders", "platform", "plugins-demo", "plugin-creator", "mcp-events", "sites", "marketplace",
+  "s-recap", "dots-stage", "dots", "appshots", "s-builders", "platform", "plugins-demo", "plugin-creator", "mcp-events", "openclaw",
+  "s-models", "sol", "ultrafast-stage", "ultrafast", "levers", "s-apis", "decisions", "decisions-demo", "agents-api", "ptc", "gpt-live",
+  "s-codex", "features-300", "macmini", "cloud-stage", "cloud", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo",
   "try", "s-build", "rules", "cierre",
 ];
 

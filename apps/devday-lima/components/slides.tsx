@@ -331,7 +331,7 @@ const all: Slide[] = [
   {
     id: "try",
     dark: true,
-    notes: "El cierre de la charla de Dominic, Codex Has Left The Laptop: tres cosas para probar. Uno, Codex Cloud si dejas la laptop entreabierta. Dos, Space si copias planes entre docs y Codex. Tres, dale a tu dot una responsabilidad que hoy haces a mano.",
+    notes: "El cierre de la charla de Dominic, Codex Has Left The Laptop: tres cosas para probar. Uno, Codex Cloud si dejas la laptop entreabierta. Dos, el Codex CLI: vista de agentes y fork a worktree. Tres, dale a tu dot una responsabilidad que hoy haces a mano.",
     render: (n) => (
       <>
         <Eyebrow>Si te llevas tres cosas</Eyebrow>
@@ -339,11 +339,11 @@ const all: Slide[] = [
           <R as="h2" i={1}>Pruébalo esta semana.</R>
           <div className="cards">
             <Card i={2} num="01" title="Codex Cloud" text="Si todavía dejas la laptop entreabierta para que el agente siga." />
-            <Card i={3} num="02" title="Space" text="Si copias planes entre docs y Codex." />
+            <Card i={3} num="02" title="Codex CLI" text="Vista de agentes y fork a worktree en tu próximo proyecto." />
             <Card i={4} num="03" title="Tu dot" text="Dale una responsabilidad que hoy haces a mano." />
           </div>
         </div>
-        <Foot left="Dominic, Developer Experience en OpenAI" right={n} />
+        <Foot left="Basado en Codex Has Left The Laptop" right={n} />
       </>
     ),
   },
@@ -925,11 +925,9 @@ const more: Slide[] = [
 
 const order = [
   "portada", "originals", "agenda", "host", "community",
-  "s-recap", "dots-stage", "dots-alf", "dots", "dots-mobile", "space-video", "space", "single-player", "three-acts", "appshots", "page-instructions", "pages", "team-work", "champions",
-  "s-models", "sol", "ultrafast-stage", "ultrafast", "ultrafast-compare", "pro500", "cost-per-task", "levers",
-  "s-apis", "decisions", "decisions-demo", "decisions-more", "agents-api", "agents-harness", "ptc", "gpt-live", "aws", "more", "private",
-  "s-codex", "features-300", "macmini", "cloud-stage", "cloud", "cloud-demo", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo", "security", "grafana",
-  "s-eco", "openclaw", "jellyware", "partners", "s-builders", "platform", "plugins-demo", "plugin-creator", "mcp-events", "sites", "marketplace",
+  "s-recap", "dots-stage", "dots", "appshots", "s-builders", "platform", "plugins-demo", "plugin-creator", "mcp-events", "openclaw",
+  "s-models", "sol", "ultrafast-stage", "ultrafast", "levers", "s-apis", "decisions", "decisions-demo", "agents-api", "ptc", "gpt-live",
+  "s-codex", "features-300", "macmini", "cloud-stage", "cloud", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo",
   "try", "s-build", "rules", "cierre",
 ];
 
