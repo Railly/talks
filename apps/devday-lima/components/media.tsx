@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import type { CSSProperties, ReactNode } from "react";
 
 function Clip({ name }: { name: string }) {
+  if (name.startsWith("/")) return <img src={name} alt="" />;
   return <video src={`/clips/${name}.mp4`} poster={`/clips/${name}.jpg`} autoPlay muted loop playsInline />;
 }
 

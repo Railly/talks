@@ -113,19 +113,19 @@ const all: Slide[] = [
   {
     id: "ultrafast",
     dark: true,
-    notes: "Ultrafast in the API, ChatGPT and Codex. Fast was already 2x speed at 2x price. Ultrafast is 8x speed at 6x price, about 300 tokens per second. Available with Astra now, Sol soon.",
+    notes: "Ultrafast: up to 8x faster token generation in Codex and up to 6x in the API, about 300 tokens per second. Useful when iteration speed matters most. In Work and Codex it ships on Pro 500 and eligible Enterprise/Edu. Available with Astra now, Sol Ultrafast coming soon.",
     render: (n) => (
       <>
         <Eyebrow>Speed</Eyebrow>
         <div className="body">
           <div className="display huge"><Words text="300 tokens" /><br /><span className="hl"><Words text="per second." i={2} /></span></div>
           <div className="cards">
-            <Card i={5} title="Standard" text="1x speed, 1x price." />
-            <Card i={6} title="Fast" text="2x speed, 2x price." />
-            <Card i={7} title="Ultrafast" text="8x speed, 6x price. In the API, ChatGPT and Codex." />
+            <Card i={5} title="Codex" text="Up to 8x faster token generation." />
+            <Card i={6} title="API" text="Up to 6x faster token generation." />
+            <Card i={7} title="Access" text="Pro 500 and eligible Enterprise/Edu in Work and Codex." />
           </div>
         </div>
-        <Foot left="Available with Astra now, GPT-6.1 Sol soon" right={n} />
+        <Foot left="Astra today, GPT-6.1 Sol Ultrafast coming soon" right={n} />
       </>
     ),
   },
@@ -300,7 +300,7 @@ const all: Slide[] = [
           <R as="h2" i={1}>Build once. Distribute in ChatGPT.</R>
           <div className="cards" style={{ ["--n" as string]: 4 }}>
             <Card i={2} tone={tone.blue} title="Sign in with ChatGPT" text="Users bring their plan. You don't pay for their tokens." />
-            <Card i={3} tone={tone.green} title="Plugin extensions" text="Full apps, native in ChatGPT and Codex." />
+            <Card i={3} tone={tone.green} title="Plugin extensions" text="Sidebar entries, panels and file viewers." />
             <Card i={4} tone={tone.lilac} title="Discovery" text="ChatGPT suggests your plugin in the conversation." />
             <Card i={5} tone={tone.sand} title="Marketplace" text="30+ launch partners, including Notion and Vercel." />
           </div>
@@ -324,7 +324,7 @@ const all: Slide[] = [
             <Stat i={5} value="25x" label="Plus usage in the new Pro 500" />
           </div>
         </div>
-        <Foot left="Also: OpenAI Private Intelligence in preview · Pro 200 is back" right={n} />
+        <Foot left="Also: Pro 200 is back" right={n} />
       </>
     ),
   },
@@ -375,7 +375,7 @@ const all: Slide[] = [
   {
     id: "cierre",
     dark: true,
-    notes: "Close: the sessions are at openai.com/devday/2026. Join Crafter Station at crafters.chat. To talk with me, railly.dev/meet. This deck was also built by agents and it's open source.",
+    notes: "Close: all announcements are at openai.com/index/devday-2026-recap; guides at developers.openai.com and learn.chatgpt.com. Join Crafter Station at crafters.chat. To talk with me, railly.dev/meet. This deck was also built by agents and it's open source.",
     render: (n) => (
       <>
         <Faces faces={CORNER} delay={0.3} />
@@ -383,10 +383,11 @@ const all: Slide[] = [
         <div className="body">
           <h2><Words text="Keep building." /></h2>
           <R i={4} className="links" >
-            <div><small>The sessions</small><span style={{ fontSize: 40 }}>openai.com/devday/2026</span></div>
+            <div><small>All announcements</small><span style={{ fontSize: 40 }}>openai.com/index/devday-2026-recap</span></div>
             <div><small>The community</small><span style={{ fontSize: 40 }}>crafters.chat</span></div>
             <div><small>Let's talk</small><span style={{ fontSize: 40 }}>railly.dev/meet</span></div>
           </R>
+          <R i={5} as="p" className="lead">Guides: <strong>developers.openai.com</strong> · <strong>learn.chatgpt.com</strong></R>
           <R i={6} as="p" className="lead">This deck was built by agents. Code: <strong>github.com/Railly/talks</strong></R>
         </div>
         <Foot left="DevDay Exchange Community: Lima" right={n} />
@@ -512,7 +513,7 @@ const more: Slide[] = [
     id: "ultrafast-stage",
     dark: true,
     notes: "Ultrafast on stage.",
-    render: () => <Full clip="ultrafast-stage" title="Ultrafast." sub="In the API, ChatGPT and Codex." src={KEY} />,
+    render: () => <Full clip="ultrafast-stage" title="Ultrafast." sub="In Codex, ChatGPT Work and the API." src={KEY} />,
   },
   {
     id: "ultrafast-compare",
@@ -738,7 +739,7 @@ const more: Slide[] = [
         <Eyebrow>Code review in Codex</Eyebrow>
         <div className="body half">
           <R as="h2" i={1}>Review is no longer the bottleneck.</R>
-          <R i={2} as="p" className="lead">PR inbox, an automatic first pass and a private chat per PR with your guidelines.</R>
+          <R i={2} as="p" className="lead">PR inbox, an automatic first pass and a private chat per PR with your guidelines. GitHub today, GitLab merge requests in preview.</R>
         </div>
         <Foot left="Code review is no longer the bottleneck" right={n} />
         <Side clip="review-inbox" src="Codex code review" />
@@ -832,15 +833,103 @@ const more: Slide[] = [
     notes: "OpenAI Marketplace: 30+ launch partners, including CodeRabbit, Notion and Vercel. Companies can use part of their OpenAI commitment to buy your product.",
     render: () => <Full clip="marketplace" title="OpenAI Marketplace." sub="30+ launch partners. Companies buy with their OpenAI commitment." src={KEY} />,
   },
+  {
+    id: "pages",
+    notes: "Pages: a living document where you write, research and create charts and images with AI. Teammates add ideas and feedback in one place. Pro, Business and Enterprise.",
+    render: (n) => (
+      <>
+        <Eyebrow>Pages</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>A living document, with AI inside.</R>
+          <R i={2} as="p" className="lead">Write, research, create charts and images on a page. Invite teammates to add ideas and feedback in one place.</R>
+        </div>
+        <Foot left="Pro, Business and Enterprise" right={n} />
+        <Side clip="/img/official/pages.jpg" src="Pages · OpenAI" />
+      </>
+    ),
+  },
+  {
+    id: "team-work",
+    notes: "Three team announcements. Collaborative slides: start from a conversation or template, people and agents edit and comment together, export to PowerPoint or Google Slides; coming soon. Teams and shared tasks: share pages, plugins, slides and spreadsheets, and set up recurring tasks whose instructions the team refines; Business and Enterprise. Meetings plugin: notes and summaries with action items in Space, audio deleted once notes are ready; macOS beta for Pro and Business.",
+    render: (n) => (
+      <>
+        <Eyebrow>ChatGPT Work for teams</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>Recurring work as a team workflow.</R>
+          <Duo three items={[{ clip: "/img/official/slides.jpg", title: "Collaborative slides", text: "From a chat or template. Export to PowerPoint and Google Slides." }, { clip: "/img/official/tasks.jpg", title: "Shared tasks", text: "Recurring, with instructions the team refines." }, { clip: "/img/official/meetings.jpg", title: "Meetings", text: "Notes and action items in Space. Audio is deleted." }]} />
+        </div>
+        <Foot left="Slides: coming soon · Tasks: Business and Enterprise · Meetings: macOS beta" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "plugin-creator",
+    notes: "Plugin Creator helps assemble your plugin. The submission flow was redesigned with clearer feedback. And there are more ways for people to discover it. Users choose their plugins and approve the access each one gets.",
+    render: (n) => (
+      <>
+        <Eyebrow>Plugins</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>From idea to discovery.</R>
+          <R i={2} as="p" className="lead"><strong>Plugin Creator</strong> helps you build it, the new submission flow gives clearer feedback, and people find it in ChatGPT. Each user approves the access it gets.</R>
+        </div>
+        <Foot left="Create, submit, discover" right={n} />
+        <Side clip="/img/official/plugins.jpg" src="Build and discover plugins" />
+      </>
+    ),
+  },
+  {
+    id: "mcp-events",
+    notes: "MCP events: plugin events trigger automations when connected apps change. A new message or a document comment starts the workflow you define. For MCP builders this is key: your server no longer just answers, it also wakes the agent up.",
+    render: (n) => (
+      <>
+        <Eyebrow>MCP events</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>Start work when something happens.</R>
+          <R i={2} as="p" className="lead">A new message or a doc comment triggers the automation you define. Plugin events, in Work and in your dot.</R>
+        </div>
+        <Foot left="Work on web, cloud and desktop · dots" right={n} />
+        <Side clip="/img/official/mcp-events.jpg" src="MCP events" />
+      </>
+    ),
+  },
+  {
+    id: "sites",
+    notes: "Sites with connected plugins: build shared tools without giving everyone the same data access, each person connects their own accounts. Connected tools are read-only for now. Shareable profiles: bring your Sites and activity together so others discover what you built; web and desktop.",
+    render: (n) => (
+      <>
+        <Eyebrow>Sites and profiles</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>A shared app, with each person's own data.</R>
+          <Duo items={[{ clip: "/img/official/sites.jpg", title: "Sites with connected plugins", text: "Each teammate connects their own accounts and permissions." }, { clip: "/img/official/profiles.jpg", title: "Shareable profiles", text: "Your Sites and activity in one place." }]} />
+        </div>
+        <Foot left="Sites: Business, Enterprise, Healthcare and Edu, read-only for now" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "private",
+    notes: "Private Intelligence. Private Safety Processing: automated safety reviews without personnel accessing the content. Private Inference: confidential computing with verifiable controls, preview planned for fall 2026.",
+    render: (n) => (
+      <>
+        <Eyebrow>Private Intelligence</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>More control for sensitive data.</R>
+          <R i={2} as="p" className="lead"><strong>Private Safety Processing:</strong> automated reviews without anyone seeing the content. <strong>Private Inference:</strong> verifiable confidential computing, preview in fall 2026.</R>
+        </div>
+        <Foot left="For evaluating frontier AI with stronger privacy requirements" right={n} />
+        <Side clip="/img/official/private.jpg" src="Private Intelligence" />
+      </>
+    ),
+  },
 ];
 
 const order = [
   "portada", "originals", "agenda", "host", "community",
-  "s-recap", "dots-stage", "dots-alf", "dots", "dots-mobile", "space-video", "space", "single-player", "three-acts", "appshots", "page-instructions", "champions",
+  "s-recap", "dots-stage", "dots-alf", "dots", "dots-mobile", "space-video", "space", "single-player", "three-acts", "appshots", "page-instructions", "pages", "team-work", "champions",
   "s-models", "sol", "ultrafast-stage", "ultrafast", "ultrafast-compare", "pro500", "cost-per-task", "levers",
-  "s-apis", "decisions", "decisions-demo", "decisions-more", "agents-api", "agents-harness", "ptc", "gpt-live", "aws", "more",
+  "s-apis", "decisions", "decisions-demo", "decisions-more", "agents-api", "agents-harness", "ptc", "gpt-live", "aws", "more", "private",
   "s-codex", "features-300", "macmini", "cloud-stage", "cloud", "cloud-demo", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo", "security", "grafana",
-  "s-eco", "openclaw", "jellyware", "partners", "s-builders", "platform", "plugins-demo", "marketplace",
+  "s-eco", "openclaw", "jellyware", "partners", "s-builders", "platform", "plugins-demo", "plugin-creator", "mcp-events", "sites", "marketplace",
   "try", "s-build", "rules", "cierre",
 ];
 

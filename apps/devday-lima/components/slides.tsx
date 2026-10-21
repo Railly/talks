@@ -113,19 +113,19 @@ const all: Slide[] = [
   {
     id: "ultrafast",
     dark: true,
-    notes: "Ultrafast en API, ChatGPT y Codex. Fast ya era 2x velocidad a 2x precio. Ultrafast es 8x velocidad a 6x precio, unos 300 tokens por segundo. Hoy con Astra, pronto con Sol.",
+    notes: "Ultrafast: hasta 8x más rápido generando tokens en Codex y hasta 6x en la API, unos 300 tokens por segundo. Útil cuando la velocidad de iteración es lo que más importa. En Work y Codex está en Pro 500 y Enterprise/Edu elegibles. Hoy con Astra, Sol Ultrafast llega pronto.",
     render: (n) => (
       <>
         <Eyebrow>Velocidad</Eyebrow>
         <div className="body">
           <div className="display huge"><Words text="300 tokens" /><br /><span className="hl"><Words text="por segundo." i={2} /></span></div>
           <div className="cards">
-            <Card i={5} title="Standard" text="1x velocidad, 1x precio." />
-            <Card i={6} title="Fast" text="2x velocidad, 2x precio." />
-            <Card i={7} title="Ultrafast" text="8x velocidad, 6x precio. En API, ChatGPT y Codex." />
+            <Card i={5} title="Codex" text="Hasta 8x más rápido generando tokens." />
+            <Card i={6} title="API" text="Hasta 6x más rápido generando tokens." />
+            <Card i={7} title="Acceso" text="Pro 500 y Enterprise/Edu elegibles en Work y Codex." />
           </div>
         </div>
-        <Foot left="Hoy con Astra, pronto con GPT-6.1 Sol" right={n} />
+        <Foot left="Hoy con Astra, GPT-6.1 Sol Ultrafast llega pronto" right={n} />
       </>
     ),
   },
@@ -300,7 +300,7 @@ const all: Slide[] = [
           <R as="h2" i={1}>Construye una vez. Distribuye en ChatGPT.</R>
           <div className="cards" style={{ ["--n" as string]: 4 }}>
             <Card i={2} tone={tone.blue} title="Sign in with ChatGPT" text="El usuario trae su plan. Tú no pagas sus tokens." />
-            <Card i={3} tone={tone.green} title="Plugin extensions" text="Apps completas, nativas en ChatGPT y Codex." />
+            <Card i={3} tone={tone.green} title="Plugin extensions" text="Barra lateral, paneles y visores de archivos." />
             <Card i={4} tone={tone.lilac} title="Descubrimiento" text="ChatGPT sugiere tu plugin en la conversación." />
             <Card i={5} tone={tone.sand} title="Marketplace" text="30+ partners al lanzar, como Notion y Vercel." />
           </div>
@@ -324,7 +324,7 @@ const all: Slide[] = [
             <Stat i={5} value="25x" label="el uso de Plus en el nuevo Pro 500" />
           </div>
         </div>
-        <Foot left="Además: OpenAI Private Intelligence en preview · Vuelve Pro 200" right={n} />
+        <Foot left="Además: vuelve Pro 200" right={n} />
       </>
     ),
   },
@@ -375,7 +375,7 @@ const all: Slide[] = [
   {
     id: "cierre",
     dark: true,
-    notes: "Cierre: las sesiones están en openai.com/devday/2026. Únanse a Crafter Station en crafters.chat. Para hablar conmigo, railly.dev/meet. Esta presentación también la hicieron agentes y es open source.",
+    notes: "Cierre: todos los anuncios están en openai.com/index/devday-2026-recap; guías en developers.openai.com y learn.chatgpt.com. Únanse a Crafter Station en crafters.chat. Para hablar conmigo, railly.dev/meet. Esta presentación también la hicieron agentes y es open source.",
     render: (n) => (
       <>
         <Faces faces={CORNER} delay={0.3} />
@@ -383,10 +383,11 @@ const all: Slide[] = [
         <div className="body">
           <h2><Words text="Sigan construyendo." /></h2>
           <R i={4} className="links" >
-            <div><small>Las sesiones</small><span style={{ fontSize: 40 }}>openai.com/devday/2026</span></div>
+            <div><small>Todos los anuncios</small><span style={{ fontSize: 40 }}>openai.com/index/devday-2026-recap</span></div>
             <div><small>La comunidad</small><span style={{ fontSize: 40 }}>crafters.chat</span></div>
             <div><small>Hablemos</small><span style={{ fontSize: 40 }}>railly.dev/meet</span></div>
           </R>
+          <R i={5} as="p" className="lead">Guías: <strong>developers.openai.com</strong> · <strong>learn.chatgpt.com</strong></R>
           <R i={6} as="p" className="lead">Esta presentación la hicieron agentes. Código: <strong>github.com/Railly/talks</strong></R>
         </div>
         <Foot left="DevDay Exchange Community: Lima" right={n} />
@@ -512,7 +513,7 @@ const more: Slide[] = [
     id: "ultrafast-stage",
     dark: true,
     notes: "Ultrafast en el escenario.",
-    render: () => <Full clip="ultrafast-stage" title="Ultrafast." sub="En la API, ChatGPT y Codex." src={KEY} />,
+    render: () => <Full clip="ultrafast-stage" title="Ultrafast." sub="En Codex, ChatGPT Work y la API." src={KEY} />,
   },
   {
     id: "ultrafast-compare",
@@ -738,7 +739,7 @@ const more: Slide[] = [
         <Eyebrow>Code review en Codex</Eyebrow>
         <div className="body half">
           <R as="h2" i={1}>La revisión ya no es el cuello de botella.</R>
-          <R i={2} as="p" className="lead">Inbox de PRs, primera pasada automática y un chat privado por PR con tus guías.</R>
+          <R i={2} as="p" className="lead">Inbox de PRs, primera pasada automática y un chat privado por PR con tus guías. GitHub hoy, merge requests de GitLab en preview.</R>
         </div>
         <Foot left="Code review is no longer the bottleneck" right={n} />
         <Side clip="review-inbox" src="Codex code review" />
@@ -832,15 +833,103 @@ const more: Slide[] = [
     notes: "OpenAI Marketplace: más de 30 partners al lanzar, como CodeRabbit, Notion y Vercel. Las empresas pueden usar parte de su compromiso con OpenAI para comprar tu producto.",
     render: () => <Full clip="marketplace" title="OpenAI Marketplace." sub="30+ partners al lanzar. Las empresas compran con su compromiso con OpenAI." src={KEY} />,
   },
+  {
+    id: "pages",
+    notes: "Pages: un documento vivo donde escribes, investigas y creas gráficos e imágenes con IA. Los compañeros aportan ideas y feedback en el mismo lugar. Pro, Business y Enterprise.",
+    render: (n) => (
+      <>
+        <Eyebrow>Pages</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>Un documento vivo, con IA adentro.</R>
+          <R i={2} as="p" className="lead">Escribe, investiga, crea gráficos e imágenes en una página. Invita al equipo a comentar y aportar en el mismo lugar.</R>
+        </div>
+        <Foot left="Pro, Business y Enterprise" right={n} />
+        <Side clip="/img/official/pages.jpg" src="Pages · OpenAI" />
+      </>
+    ),
+  },
+  {
+    id: "team-work",
+    notes: "Tres anuncios de trabajo en equipo. Slides colaborativos: arrancas desde una conversación o un template, editan y comentan juntos personas y agentes, y exportas a PowerPoint o Google Slides; coming soon. Teams y tareas compartidas: compartes pages, plugins, slides y hojas de cálculo, y defines tareas recurrentes cuyas instrucciones el equipo refina; Business y Enterprise. Meetings plugin: notas y resúmenes con action items en Space, el audio se borra cuando las notas están listas; beta en macOS para Pro y Business.",
+    render: (n) => (
+      <>
+        <Eyebrow>ChatGPT Work en equipo</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>El trabajo recurrente, como flujo del equipo.</R>
+          <Duo three items={[{ clip: "/img/official/slides.jpg", title: "Slides colaborativos", text: "Desde un chat o template. Exporta a PowerPoint y Google Slides." }, { clip: "/img/official/tasks.jpg", title: "Tareas compartidas", text: "Recurrentes, con instrucciones que el equipo ajusta." }, { clip: "/img/official/meetings.jpg", title: "Meetings", text: "Notas y action items en Space. El audio se borra." }]} />
+        </div>
+        <Foot left="Slides: coming soon · Tasks: Business y Enterprise · Meetings: beta en macOS" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "plugin-creator",
+    notes: "Plugin Creator ayuda a ensamblar tu plugin. El flujo de envío se rediseñó con feedback más claro. Y hay más formas de que la gente lo descubra. Los usuarios eligen sus plugins y aprueban el acceso de cada uno.",
+    render: (n) => (
+      <>
+        <Eyebrow>Plugins</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>De la idea al descubrimiento.</R>
+          <R i={2} as="p" className="lead"><strong>Plugin Creator</strong> te ayuda a armarlo, el envío nuevo da feedback más claro y la gente lo encuentra en ChatGPT. Cada usuario aprueba el acceso que recibe.</R>
+        </div>
+        <Foot left="Crear, enviar, descubrir" right={n} />
+        <Side clip="/img/official/plugins.jpg" src="Build and discover plugins" />
+      </>
+    ),
+  },
+  {
+    id: "mcp-events",
+    notes: "MCP events: los eventos de plugins disparan automatizaciones cuando cambian las apps conectadas. Un mensaje nuevo o un comentario en un documento arranca el flujo que definas. Para builders de MCP esto es clave: tu servidor ya no solo responde, también despierta al agente.",
+    render: (n) => (
+      <>
+        <Eyebrow>MCP events</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>Que el trabajo arranque cuando algo pasa.</R>
+          <R i={2} as="p" className="lead">Un mensaje nuevo o un comentario en un doc dispara la automatización que definas. Eventos de plugins, en Work y en tu dot.</R>
+        </div>
+        <Foot left="Work en web, cloud y desktop · dots" right={n} />
+        <Side clip="/img/official/mcp-events.jpg" src="MCP events" />
+      </>
+    ),
+  },
+  {
+    id: "sites",
+    notes: "Sites con plugins conectados: armas herramientas compartidas sin dar a todos el mismo acceso a datos, cada uno conecta sus cuentas. Por ahora las herramientas conectadas son de solo lectura. Perfiles compartibles: juntan tus Sites y tu actividad para que otros descubran lo que construiste; web y desktop.",
+    render: (n) => (
+      <>
+        <Eyebrow>Sites y perfiles</Eyebrow>
+        <div className="body">
+          <R as="h2" i={1}>Una app compartida, con los datos de cada uno.</R>
+          <Duo items={[{ clip: "/img/official/sites.jpg", title: "Sites con plugins conectados", text: "Cada compañero conecta sus cuentas y permisos." }, { clip: "/img/official/profiles.jpg", title: "Perfiles compartibles", text: "Tus Sites y tu actividad en un solo lugar." }]} />
+        </div>
+        <Foot left="Sites: Business, Enterprise, Healthcare y Edu, solo lectura por ahora" right={n} />
+      </>
+    ),
+  },
+  {
+    id: "private",
+    notes: "Private Intelligence. Private Safety Processing: revisiones de seguridad automatizadas sin que personal acceda al contenido. Private Inference: confidential computing con controles verificables, preview planeada para otoño de 2026.",
+    render: (n) => (
+      <>
+        <Eyebrow>Private Intelligence</Eyebrow>
+        <div className="body half">
+          <R as="h2" i={1}>Más control para datos sensibles.</R>
+          <R i={2} as="p" className="lead"><strong>Private Safety Processing:</strong> revisiones automáticas sin que nadie vea el contenido. <strong>Private Inference:</strong> confidential computing verificable, preview en otoño 2026.</R>
+        </div>
+        <Foot left="Para evaluar IA de frontera con requisitos de privacidad" right={n} />
+        <Side clip="/img/official/private.jpg" src="Private Intelligence" />
+      </>
+    ),
+  },
 ];
 
 const order = [
   "portada", "originals", "agenda", "host", "community",
-  "s-recap", "dots-stage", "dots-alf", "dots", "dots-mobile", "space-video", "space", "single-player", "three-acts", "appshots", "page-instructions", "champions",
+  "s-recap", "dots-stage", "dots-alf", "dots", "dots-mobile", "space-video", "space", "single-player", "three-acts", "appshots", "page-instructions", "pages", "team-work", "champions",
   "s-models", "sol", "ultrafast-stage", "ultrafast", "ultrafast-compare", "pro500", "cost-per-task", "levers",
-  "s-apis", "decisions", "decisions-demo", "decisions-more", "agents-api", "agents-harness", "ptc", "gpt-live", "aws", "more",
+  "s-apis", "decisions", "decisions-demo", "decisions-more", "agents-api", "agents-harness", "ptc", "gpt-live", "aws", "more", "private",
   "s-codex", "features-300", "macmini", "cloud-stage", "cloud", "cloud-demo", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo", "security", "grafana",
-  "s-eco", "openclaw", "jellyware", "partners", "s-builders", "platform", "plugins-demo", "marketplace",
+  "s-eco", "openclaw", "jellyware", "partners", "s-builders", "platform", "plugins-demo", "plugin-creator", "mcp-events", "sites", "marketplace",
   "try", "s-build", "rules", "cierre",
 ];
 
