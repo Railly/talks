@@ -923,17 +923,18 @@ const more: Slide[] = [
   },
 ];
 
-const order = [
-  "portada", "originals", "agenda", "host", "community",
-  "s-recap", "dots-stage", "dots", "appshots", "s-builders", "platform", "plugins-demo", "plugin-creator", "mcp-events", "openclaw",
-  "s-models", "sol", "ultrafast-stage", "ultrafast", "levers", "s-apis", "decisions", "decisions-demo", "agents-api", "ptc", "gpt-live",
-  "s-codex", "features-300", "macmini", "cloud-stage", "cloud", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo",
-  "try", "s-build", "rules", "cierre",
+const blocks: [string, string[]][] = [
+  ["Railly", ["portada", "originals", "agenda", "host", "community"]],
+  ["Edward", ["s-recap", "dots-stage", "dots", "appshots", "s-builders", "platform", "plugins-demo", "plugin-creator", "mcp-events", "openclaw"]],
+  ["Carlos", ["s-models", "sol", "ultrafast-stage", "ultrafast", "levers", "s-apis", "decisions", "decisions-demo", "agents-api", "ptc", "gpt-live"]],
+  ["Railly", ["s-codex", "features-300", "macmini", "cloud-stage", "cloud", "cloud-phone", "shader", "cli-stage", "cli", "cli-demo", "review-demo", "try", "s-build", "rules", "cierre"]],
 ];
 
 const byId = new Map([...all, ...more].map((s) => [s.id, s]));
-export const slides: Slide[] = order.map((id) => {
-  const s = byId.get(id);
-  if (!s) throw new Error(`missing slide ${id}`);
-  return s;
-});
+export const slides: Slide[] = blocks.flatMap(([speaker, ids]) =>
+  ids.map((id) => {
+    const s = byId.get(id);
+    if (!s) throw new Error(`missing slide ${id}`);
+    return { ...s, speaker };
+  }),
+);

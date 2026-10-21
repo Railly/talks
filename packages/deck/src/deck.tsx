@@ -47,6 +47,8 @@ export function Deck({ slides }: { slides: Slide[] }) {
   }, [go, index]);
 
   const slide = slides[index];
+  const next = slides[index + 1]?.speaker;
+  const handoff = slide.speaker && next && next !== slide.speaker ? next : undefined;
 
   return (
     <>
@@ -79,6 +81,7 @@ export function Deck({ slides }: { slides: Slide[] }) {
         </div>
       </div>
       <div className="hud">
+        {slide.speaker && <span className="speaker">{slide.speaker}{handoff && <b> → sigue {handoff}</b>}</span>}
         <span>{index + 1} / {slides.length}</span>
         <span>N notas · F pantalla completa</span>
       </div>
@@ -91,7 +94,7 @@ export function Deck({ slides }: { slides: Slide[] }) {
             exit={{ y: "100%" }}
             transition={{ duration: 0.4, ease: EASE }}
           >
-            <small>Notas · {index + 1} / {slides.length}</small>
+            <small>Notas · {index + 1} / {slides.length}{slide.speaker && ` · ${slide.speaker}`}{handoff && ` → sigue ${handoff}`}</small>
             {slide.notes}
           </motion.div>
         )}
