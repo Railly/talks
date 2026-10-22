@@ -1,6 +1,5 @@
 "use client";
 
-import { CreditsLive } from "@/components/credits";
 import { Card, EASE, Eyebrow, Foot, Mark, R, type Slide, tone, Words } from "@talks/deck";
 import { motion } from "motion/react";
 import { CORNER, COVER, Faces } from "./faces";
@@ -379,17 +378,18 @@ const all: Slide[] = [
     notes: "Después de la demo. Abrir la ventana desde crafter.run/admin; el código aparece aquí. Cerrar y repartir cuando todos confirmaron.",
     render: (n) => (
       <>
-        <Eyebrow>Créditos</Eyebrow>
-        <div className="body" style={{ maxWidth: 940 }}>
-          <R as="h2" i={1}>Tus créditos de Codex.</R>
-          <R i={2}><CreditsLive t={{ checkIn: "Escanea y haz check-in con tu correo de Luma. Si no te inscribiste, únete a la waitlist.", open: "Escribe este código en la página para confirmar que estás aquí.", closed: "Créditos repartidos. Recarga la página para ver tu código.", winners: "Waitlist con créditos:", present: "confirmaron", checkedIn: "con check-in.", noScreen: "Escanea y haz check-in con tu correo de Luma." }} /></R>
+        <div style={{ position: "absolute", inset: 0, display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", gap: 80, padding: "0 110px" }}>
+          <div>
+            <R as="h2" i={1}><span style={{ fontSize: 96, lineHeight: 1 }}>Escanea y llévate tus créditos de Codex.</span></R>
+            <R i={2}><p style={{ marginTop: 32, font: "400 36px/1.3 var(--text)", color: "var(--muted)" }}>Entra con tu cuenta y tu código aparece al toque.</p></R>
+            <R i={3}><p style={{ marginTop: 48, font: "500 40px/1 var(--display)" }}>crafter.run/es/events/devday-lima/credits</p></R>
+          </div>
+          <R i={2}>
+            {/* biome-ignore lint/performance/noImgElement: static QR */}
+            <img src="/img/credits-qr.svg" alt="QR crafter.run credits" style={{ width: 820, height: 820, borderRadius: 24, display: "block" }} />
+          </R>
         </div>
-        <R i={3} className="qr qr-sm">
-          {/* biome-ignore lint/performance/noImgElement: static QR */}
-          <img src="/img/credits-qr.svg" alt="QR crafter.run credits" />
-          <span>Check-in<b>crafter.run</b></span>
-        </R>
-        <Foot left="Sin código en pantalla, no hay crédito" right={n} />
+        <Foot left="Un código por cuenta" right={n} />
       </>
     ),
   },
